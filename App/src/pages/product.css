@@ -1,0 +1,12 @@
+/* TwoColumns.css */
+.container {
+  display: flex; /* Makes the children flex items arranged in a row by default */
+  justify-content: space-between; /* Adds space between the columns */
+}
+
+.column {
+  flex: 1; /* Makes both columns take up equal available space */
+  padding: 10px; /* Add some spacing inside the columns */
+  border: 1px solid #ccc; /* Optional: for visualization */
+  margin: 5px; /* Optional: for space between columns */
+}
