@@ -1,4 +1,5 @@
-import "./product.css";
+import styles from "./product.module.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CiStar } from "react-icons/ci";
 
@@ -21,12 +22,12 @@ const Product = ({ productitem }) => {
     return stars;
   }
   return (
-    <div className="container">
-      <div className="card">
-        <div className="image-section">
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.imageSection}>
           <img src={productitem.image} alt={productitem.title} />
         </div>
-        <div className="section">
+        <div className={styles.section}>
           <h5>{productitem.title}</h5>
 
           <p>${productitem.price}</p>

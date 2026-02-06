@@ -1,0 +1,30 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 90%;
+  margin-left: 50px;
+}
+
+.grid-item {
+  padding: 2em;
+
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: 430px;
+}
+
+.btn-primary {
+  color: darkblue;
+}
+.categoryDropdown {
+  width: 20%;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}

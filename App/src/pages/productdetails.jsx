@@ -1,4 +1,4 @@
-import "./productDetails.css";
+import styles from "./productDetails.module.css";
 import Product from "./product";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -53,7 +53,7 @@ const ProductDetails = () => {
       <Header></Header>
       <div>
         <select
-          className="category-dropddown"
+          className={styles.categoryDropdown}
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
           name="fruits"
@@ -65,7 +65,7 @@ const ProductDetails = () => {
           <option value="electronics">Electronics</option>
         </select>
         <select
-          className="category-dropddown"
+          className={styles.categoryDropdown}
           id="sort-direction"
           onChange={(e) => sortByValue(e.target.value)}
           name="fruits"
@@ -74,7 +74,7 @@ const ProductDetails = () => {
           <option value="desc">Sort by Price High to Low:</option>
         </select>
       </div>
-      <div className="grid-container">
+      <div className={styles.gridContainer}>
         {isLoading ? (
           <p>Loading...</p>
         ) : filteredData.length > 0 ? (
