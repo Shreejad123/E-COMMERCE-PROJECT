@@ -66,6 +66,7 @@ const ProductDetails = () => {
         </select>
         <select
           className={styles.categoryDropdown}
+          aria-label=".form-select-lg example"
           id="sort-direction"
           onChange={(e) => sortByValue(e.target.value)}
           name="fruits"

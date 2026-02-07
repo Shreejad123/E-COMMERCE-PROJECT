@@ -1,26 +1,31 @@
 import "./navbar.css";
+import { FaShoppingBag } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { IoCartSharp } from "react-icons/io5";
+import { IoPersonSharp } from "react-icons/io5";
+
 function NavBar() {
   return (
     <>
       <div>
-        <ul>
+        <ul className="Navbar">
           <li>
-            <a href="#home">Home</a>
+            <span>
+              <IoCartSharp size={25} />
+              &nbsp;&nbsp;ShopEase
+            </span>
           </li>
-          <li>
-            <a href="#news">Products</a>
-          </li>
-
-          <li>
-            <div className="search-container">
-              <input
-                className="form-control search-input"
-                type="search"
-                placeholder="Search products..."
-                aria-label="Search"
-              />
-            </div>
-          </li>
+          <ul className="iconsContainer">
+            <li className="icons">
+              <FaSearch size={22} />
+            </li>
+            <li className="icons">
+              <IoPersonSharp size={22} />
+            </li>
+            <li className="icons">
+              <IoCartSharp size={22} />
+            </li>
+          </ul>
         </ul>
       </div>
     </>

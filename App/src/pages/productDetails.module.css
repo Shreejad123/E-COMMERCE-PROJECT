@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 90%;
-  margin-left: 50px;
+  margin-left: 90px;
 }
 
 .grid-item {
@@ -17,14 +17,19 @@
   height: 430px;
 }
 
-.btn-primary {
-  color: darkblue;
-}
 .categoryDropdown {
   width: 20%;
   height: 30px;
   margin-top: 20px;
-  margin-left: 60px;
+  margin-left: 90px;
   margin-bottom: 20px;
   border-radius: 5px;
+  padding: 5px;
+}
+option:checked {
+  background-color: white;
+  color: darkblue;
+}
+.my-btn {
+  background-color: darkblue;
 }

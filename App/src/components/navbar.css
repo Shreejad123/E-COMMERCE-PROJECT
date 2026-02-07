@@ -13,16 +13,14 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: darkblue;
 }
 
 ul li {
   float: left;
 }
-li {
-  margin-left: 60px;
-}
-ul li a {
+
+ul li {
   display: block;
   color: white;
   text-align: center;
@@ -39,6 +37,17 @@ input {
   width: 400px;
 }
 
-.search-icon {
+.Navbar {
+  border-radius: 5px;
+  width: 1260px;
+  height: 55px;
+}
+span {
+  margin-top: 10px;
   color: white;
+  font-size: 20px;
+  margin-left: 50px;
+}
+ul .iconsContainer {
+  margin-left: 1000px;
 }

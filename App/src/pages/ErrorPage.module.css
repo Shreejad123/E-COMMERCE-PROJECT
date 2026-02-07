@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: #e8e8e8;
+  /* Ensures children are positioned in 3D space */
+}
+
+.errorInfo {
+  font-size: 5rem;
+  color: darkblue;
+}
+
+.errorMessage {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+.customBtn {
+  background-color: darkblue;
+  border: darkblue;
+}
+
+.imageContainer {
+  height: 250px;
+}

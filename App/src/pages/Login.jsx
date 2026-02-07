@@ -2,73 +2,60 @@ import "./Login.css";
 function Login() {
   return (
     <>
-      <div class="login-wrapper">
-        <main class="login-card">
+      <div className="login-wrapper">
+        <main className="login-card">
           <header>
-            <h1>Welcome Back</h1>
-            <p>Enter your details to access your account.</p>
+            <h1 className="header">Welcome Back</h1>
+            <p className="info">Enter your details to access your account.</p>
           </header>
-
-          <form id="loginForm" novalidate>
-            <div class="form-group" id="emailGroup">
-              <div class="input-container">
+          <form id="loginForm">
+            <div className="form-group" id="emailGroup">
+              <div className="input-container">
                 <input
                   type="email"
                   id="email"
-                  class="form-input"
+                  className="form-input"
                   placeholder=" "
                   required
                 />
-                <label for="email" class="floating-label">
+                <label htmlFor="email" className="floating-label">
                   Email Address
                 </label>
               </div>
-              <span class="error-message" id="emailError">
-                Please enter a valid email address.
-              </span>
             </div>
-
-            <div class="form-group" id="passwordGroup">
-              <div class="input-container">
+            <div className="form-group" id="passwordGroup">
+              <div className="input-container">
                 <input
                   type="password"
                   id="password"
-                  class="form-input"
+                  className="form-input"
                   placeholder=" "
                   required
                 />
-                <label for="password" class="floating-label">
+                <label htmlFor="password" className="floating-label">
                   Password
                 </label>
                 <button
                   type="button"
-                  class="password-toggle"
+                  className="password-toggle"
                   id="togglePassword"
                   aria-label="Toggle password visibility"
-                >
-                  <i class="bi bi-eye"></i>
-                </button>
+                ></button>
               </div>
-              <span class="error-message" id="passwordError">
-                Password must be at least 6 characters.
-              </span>
             </div>
-
-            <div class="form-options">
-              <label class="remember-me">
-                <input type="checkbox" id="rememberMe" />
-                <span>Remember me</span>
-              </label>
-              <a href="#" class="forgot-password">
+            <div className="form-options">
+              {" "}
+              <a href="#" className="forgot-password">
+                {" "}
                 Forgot password?
               </a>
             </div>
 
-            <button type="submit" class="btn-submit">
+            <button type="submit" className="btn-submit">
               Sign In
             </button>
 
-            <div class="create-account">
+            <div className="create-account">
               Don't have an account? <a href="#">Create an account</a>
             </div>
           </form>

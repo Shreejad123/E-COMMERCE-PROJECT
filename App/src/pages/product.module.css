@@ -10,7 +10,7 @@ TwoColumns.css .container {
   margin: 5px;
 }
 .imageSection {
-  background-color: #d3d3d3;
+  background-color: #e8e8e8;
   padding: 15px;
   text-align: center;
 }
@@ -19,7 +19,7 @@ TwoColumns.css .container {
   height: 120px;
   margin-top: 20px;
   margin-left: 30px;
-  background-color: #d3d3d3;
+  background-color: #e8e8e8;
   object-fit: contain;
 }
 .section {
@@ -33,4 +33,17 @@ TwoColumns.css .container {
   background: transparent;
   width: 350px;
   text-align: center;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: rotateZ(1deg) rotateY(10deg) scale(1.1);
+  box-shadow: 0 5em 2em gray;
+}
+.customBtn {
+  background-color: darkblue;
+  border: darkblue;
+}
+.card {
+  transition: all 0.3s ease;
 }
