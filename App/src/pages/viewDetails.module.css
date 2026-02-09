@@ -1,0 +1,27 @@
+.card {
+  width: 600px;
+  height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  align-items: center;
+}
+
+.img {
+  width: 160px;
+  margin-left: 200px;
+  margin-bottom: 20px;
+}
+
+.card h5 {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+.paragraph {
+  margin-left: 50px;
+}
+.customBtn {
+  margin-left: 50px;
+  margin-top: 20px;
+}

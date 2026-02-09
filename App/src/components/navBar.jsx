@@ -1,5 +1,4 @@
 import "./navbar.css";
-import { FaShoppingBag } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoCartSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
