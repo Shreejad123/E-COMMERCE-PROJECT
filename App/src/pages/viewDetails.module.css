@@ -1,15 +1,9 @@
-.card {
-  width: 600px;
-  height: 500px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  align-items: center;
-}
-
-.img {
-  width: 160px;
+.imageSection {
+  max-width: 200px;
   margin-left: 200px;
   margin-bottom: 20px;
+  height: 200px;
+  width: 200px;
 }
 
 .card h5 {
