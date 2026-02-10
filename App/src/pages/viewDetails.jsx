@@ -19,6 +19,17 @@ const ViewDetails = () => {
     toast.success("Added to Wishlist!", { autoClose: 10000 });
     console.log("cliked on toast");
   };
+  function getStars(rating) {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (rating - 1 < i) {
+        stars.push(<span style={{ color: "blue" }}>☆</span>);
+      } else {
+        stars.push(<span style={{ color: "blue" }}>★</span>);
+      }
+    }
+    return stars;
+  }
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
@@ -36,10 +47,12 @@ const ViewDetails = () => {
   }
 
   return (
-    <div>
-      <div className={styles.card}>
-        <h5>{products.title}</h5>
-
+    <div className={styles.card}>
+      <div>
+        <h5 className={styles.header}>
+          <b>{products.title}</b>
+        </h5>
+        <p className={styles.category}>{products.category}</p>
         <div>
           <img
             className={styles.imageSection}
@@ -49,10 +62,16 @@ const ViewDetails = () => {
         </div>
         <div className={styles.section}>
           <div className={styles.paragraph}>
-            <p>${products.price}</p>
-            <p>{products.rating.rate}⭐</p>
-            <p>Category:{products.category}</p>
-            <p>{products.description}</p>
+            <p>
+              ${products.price}{" "}
+              <span className={styles.stars}>
+                {getStars(products.rating.rate)}
+              </span>
+            </p>
+            <p>
+              <b>Key Features</b>
+            </p>
+            <p className={styles.descriptionPara}>{products.description}</p>
           </div>
           <button
             className={`btn btn-primary ${styles.customBtn}`}
