@@ -23,9 +23,13 @@ const ViewDetails = () => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (rating - 1 < i) {
-        stars.push(<span style={{ color: "blue" }}>☆</span>);
+        stars.push(
+          <span style={{ color: "blue", display: "inline-block" }}>☆</span>,
+        );
       } else {
-        stars.push(<span style={{ color: "blue" }}>★</span>);
+        stars.push(
+          <span style={{ color: "blue", display: "inline-block" }}>★</span>,
+        );
       }
     }
     return stars;
@@ -47,50 +51,52 @@ const ViewDetails = () => {
   }
 
   return (
-    <div className={styles.card}>
-      <div>
-        <h5 className={styles.header}>
-          <b>{products.title}</b>
-        </h5>
-        <p className={styles.category}>{products.category}</p>
+    <div className={styles.container}>
+      <div className={styles.card}>
         <div>
-          <img
-            className={styles.imageSection}
-            src={products.image}
-            alt={products.title}
-          />
-        </div>
-        <div className={styles.section}>
-          <div className={styles.paragraph}>
-            <p>
-              ${products.price}{" "}
-              <span className={styles.stars}>
-                {getStars(products.rating.rate)}
-              </span>
-            </p>
-            <p>
-              <b>Key Features</b>
-            </p>
-            <p className={styles.descriptionPara}>{products.description}</p>
+          <h5 className={styles.header}>
+            <b>{products.title}</b>
+          </h5>
+          <p className={styles.category}>Category:{products.category}</p>
+          <div>
+            <img
+              className={styles.imageSection}
+              src={products.image}
+              alt={products.title}
+            />
           </div>
-          <button
-            className={`btn btn-primary ${styles.customBtn}`}
-            onClick={handleClick}
-          >
-            <IoCartSharp size={20} />
-            Add to cart
-          </button>
-          <button
-            className={`btn btn-danger ${styles.customBtn}`}
-            onClick={showToastMessage}
-          >
-            <FaRegHeart size={20} /> Add to wishlist
-          </button>
-          <button className={`btn btn-success ${styles.customBtn}`}>
-            <RiFeedbackFill size={20} />
-            Rate Now
-          </button>
-          <ToastProvider></ToastProvider>
+          <div className={styles.section}>
+            <div className={styles.paragraph}>
+              <p>
+                ${products.price}{" "}
+                <span className={styles.stars}>
+                  {getStars(products.rating.rate)}
+                </span>
+              </p>
+              <p>
+                <b>Key Features:</b>
+              </p>
+              <p className={styles.descriptionPara}>{products.description}</p>
+            </div>
+            <button
+              className={`btn btn-primary ${styles.customBtn}`}
+              onClick={handleClick}
+            >
+              <IoCartSharp size={20} />
+              Add to cart
+            </button>
+            <button
+              className={`btn btn-danger ${styles.customBtn}`}
+              onClick={showToastMessage}
+            >
+              <FaRegHeart size={20} /> Add to wishlist
+            </button>
+            <button className={`btn btn-success ${styles.customBtn}`}>
+              <RiFeedbackFill size={20} />
+              Rate Now
+            </button>
+            <ToastProvider></ToastProvider>
+          </div>
         </div>
       </div>
     </div>
