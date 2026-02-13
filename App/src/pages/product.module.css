@@ -47,3 +47,9 @@ TwoColumns.css .container {
 .card {
   transition: all 0.3s ease;
 }
+.stars {
+  color: darkblue;
+}
+.input {
+  width: 20px;
+}

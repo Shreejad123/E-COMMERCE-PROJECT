@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./productDetails.module.css";
 import Product from "./product";
 import { useEffect, useState } from "react";
@@ -12,13 +13,17 @@ const ProductDetails = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortDirection, setSortDirection] = useState("asc");
-
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [loading, setLoading] = useState(true);
+  console.log(styles);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://fakestoreapi.com/products");
         setProducts(response.data);
         setFilteredData(response.data);
+        setFilteredProducts(response.data);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -27,6 +32,7 @@ const ProductDetails = () => {
     };
     fetchData();
   }, []);
+
   function sortByValue(direction) {
     setSortDirection(direction);
     const sortedProducts = [...products].sort((a, b) => {
@@ -38,6 +44,18 @@ const ProductDetails = () => {
     });
     setProducts(sortedProducts);
   }
+  useEffect(() => {
+    if (searchInput === "") {
+      setFilteredProducts(products);
+      return;
+    }
+
+    const filterBySearch = products.filter((item) =>
+      item.title.toLowerCase().includes(searchInput.toLowerCase()),
+    );
+
+    setFilteredProducts(filterBySearch);
+  }, [searchInput, products]);
   useEffect(() => {
     if (filterCategory === "") {
       setFilteredData(products);
@@ -74,12 +92,19 @@ const ProductDetails = () => {
           <option value="asc">Sort by Price low to High:</option>
           <option value="desc">Sort by Price High to Low:</option>
         </select>
+        <input
+          className={`form-control me-2 ${styles.SearchBar}`}
+          value={searchInput}
+          placeholder="Search Products..."
+          type="text"
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
       </div>
       <div className={styles.gridContainer}>
         {isLoading ? (
           <p>Loading...</p>
-        ) : filteredData.length > 0 ? (
-          filteredData.map((item) => (
+        ) : filteredProducts.length > 0 ? (
+          filteredProducts.map((item) => (
             <Product key={item.id} productitem={item} />
           ))
         ) : (

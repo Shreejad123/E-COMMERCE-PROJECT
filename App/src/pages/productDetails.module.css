@@ -33,3 +33,12 @@ option:checked {
 .my-btn {
   background-color: darkblue;
 }
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+.SearchBar {
+  width: 200px;
+  padding: 5px;
+  border-radius: 6px;
+  display: inline;
+}
