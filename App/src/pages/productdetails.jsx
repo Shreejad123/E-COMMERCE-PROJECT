@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const ProductDetails = () => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loading, setLoading] = useState(true);
-  console.log(styles);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -110,6 +111,9 @@ const ProductDetails = () => {
         ) : (
           <p>No products found</p>
         )}
+      </div>
+      <div className={styles.footerSection}>
+        <Footer></Footer>
       </div>
     </div>
   );

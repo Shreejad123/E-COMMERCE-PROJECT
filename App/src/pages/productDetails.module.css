@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 90%;
+  width: 80%;
   margin-left: 90px;
 }
 
@@ -41,4 +41,7 @@ option:checked {
   padding: 5px;
   border-radius: 6px;
   display: inline;
+}
+.footerSection {
+  margin-top: 20px;
 }
