@@ -1,3 +1,4 @@
+import { useState } from "react";
 function Cart() {
   const storedProduct = JSON.parse(localStorage.getItem("cartProduct"));
 

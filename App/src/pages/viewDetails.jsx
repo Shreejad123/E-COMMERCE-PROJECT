@@ -15,6 +15,7 @@ const ViewDetails = () => {
   const { id } = useParams();
   const [products, setProducts] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -31,11 +32,23 @@ const ViewDetails = () => {
   if (!products) {
     return <h2>Loading...</h2>;
   }
-  const addtoCart = () => {
+  const addtoCart = (product) => {
     toast.success("Added to Wishlist!", { autoClose: 1000 });
-    localStorage.setItem("cartProduct", JSON.stringify(products));
 
-    console.log("Saved to localStorage");
+    const index = cart.findIndex((item) => item.id === product.id);
+
+    if (index !== -1) {
+      // product already in cart
+      const updatedCart = [...cart];
+      updatedCart[index].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      // new product
+      setCart([...cart, { ...product, quantity: 1 }]);
+      localStorage.setItem("cartProduct", JSON.stringify(products));
+
+      console.log("Saved to localStorage");
+    }
   };
 
   return (
