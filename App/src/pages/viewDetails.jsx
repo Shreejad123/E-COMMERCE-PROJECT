@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
-import styles from "./viewDetails.module.css";
 import { IoCartSharp } from "react-icons/io5";
 import { RiFeedbackFill } from "react-icons/ri";
 import { toast } from "react-toastify";
@@ -9,44 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 import ToastProvider from "./toastmessage";
 import Footer from "../components/Footer";
 import Navbar from "../components/navBar";
-
+import ViewProduct from "./viewPage";
+import styles from "./viewDetails.module.css";
+import Cart from "./Cart";
 const ViewDetails = () => {
   const { id } = useParams();
   const [products, setProducts] = useState(null);
-  const handleClick = () => {
-    toast.success("Added to cart!", { autoClose: 1000 });
-  };
-  const showToastMessage = () => {
-    toast.success("Added to Wishlist!", { autoClose: 1000 });
-  };
-  function getStars(rating) {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      if (rating - 1 < i) {
-        stars.push(
-          <span
-            style={{
-              color: "blue",
-            }}
-          >
-            ☆
-          </span>,
-        );
-      } else {
-        stars.push(
-          <span
-            style={{
-              color: "blue",
-            }}
-          >
-            ★
-          </span>,
-        );
-      }
-    }
-
-    return stars;
-  }
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -63,66 +31,30 @@ const ViewDetails = () => {
   if (!products) {
     return <h2>Loading...</h2>;
   }
+  const addtoCart = () => {
+    toast.success("Added to Wishlist!", { autoClose: 1000 });
+    localStorage.setItem("cartProduct", JSON.stringify(products));
+
+    console.log("Saved to localStorage");
+  };
 
   return (
     <>
       <Navbar></Navbar>
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <div>
-            <h5 className={styles.header}>
-              <b>{products.title}</b>
-            </h5>
-            <p className={styles.category}>
-              <b>
-                Category:
-                {products.category}{" "}
-              </b>
-            </p>
-            <div>
-              <img
-                className={styles.imageSection}
-                src={products.image}
-                alt={products.title}
-              />
-            </div>
-            <div className={styles.section}>
-              <div className={styles.paragraph}>
-                <p>
-                  ${products.price}{" "}
-                  <div className={styles.starsContainer}>
-                    <span className={styles.stars}>
-                      {getStars(products.rating.rate)}
-                    </span>
-                  </div>
-                </p>
-                <p>
-                  <b>Key Features:</b>
-                </p>
-                <p className={styles.descriptionPara}>{products.description}</p>
-              </div>
-              <button
-                className={`btn btn-primary ${styles.customBtn}`}
-                onClick={handleClick}
-              >
-                <IoCartSharp size={20} />
-                Add to cart
-              </button>
-              <button
-                className={`btn btn-danger ${styles.customBtn}`}
-                onClick={showToastMessage}
-              >
-                <FaRegHeart size={20} /> Add to wishlist
-              </button>
-              <button className={`btn btn-success ${styles.customBtn}`}>
-                <RiFeedbackFill size={20} />
-                Rate Now
-              </button>
-              <ToastProvider></ToastProvider>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ViewProduct viewitem={products}></ViewProduct>
+
+      <button
+        className={`btn btn-danger ${styles.customBtn}`}
+        onClick={addtoCart}
+      >
+        <FaRegHeart size={20} /> Add to cart
+      </button>
+      <button className={`btn btn-success ${styles.customBtn}`}>
+        <RiFeedbackFill size={20} />
+        Rate Now
+      </button>
+      <ToastProvider></ToastProvider>
+
       <Footer></Footer>
     </>
   );
