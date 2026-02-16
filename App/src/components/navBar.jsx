@@ -1,26 +1,25 @@
-import "./navbar.css";
+import styles from "./navbar.module.css";
 import { FaSearch } from "react-icons/fa";
 import { IoCartSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGTranslate } from "react-icons/md";
 import LanguageDropdown from "./languageDropdown";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
   return (
     <>
       <div>
-        <ul className="Navbar">
+        <ul className={styles.Navbar}>
           <li>
-            <span>
+            <span className={styles.shopEase}>
               <IoCartSharp size={25} />
               &nbsp;&nbsp;ShopEase
             </span>
           </li>
-          <ul className="iconsContainer">
-            <li className="icons">
-              <FaSearch size={22} />
-            </li>
-            <li className="icons">
+          <ul className={styles.iconsContainer}>
+            <li className="icons" onClick={() => navigate("/login")}>
               <IoPersonSharp size={22} />
             </li>
             <li className="icons">

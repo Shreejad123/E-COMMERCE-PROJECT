@@ -39,15 +39,16 @@ input {
 
 .Navbar {
   border-radius: 5px;
-  width: 1260px;
+  width: 1280px;
   height: 55px;
 }
-/* span {
+.shopEase {
   margin-top: 10px;
   color: white;
   font-size: 20px;
   margin-left: 50px;
-} */
+  width: 100%;
+}
 ul .iconsContainer {
   margin-left: 850px;
 }

@@ -4,7 +4,7 @@ import logo from "./logo.png";
 function ErrorMessage() {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/product");
+    navigate("/");
   };
   return (
     <>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
-import { IoCartSharp } from "react-icons/io5";
 import { RiFeedbackFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,9 +10,10 @@ import Navbar from "../components/navBar";
 import ViewProduct from "./viewPage";
 import styles from "./viewDetails.module.css";
 import Cart from "./Cart";
+import { IoCartSharp } from "react-icons/io5";
 const ViewDetails = () => {
   const { id } = useParams();
-  const [products, setProducts] = useState(null);
+  const [product, setProduct] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [cart, setCart] = useState([]);
 
@@ -25,50 +25,63 @@ const ViewDetails = () => {
         }
         return res.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => setProduct(data))
       .catch((err) => console.error(err));
   }, [id]);
   console.log("ID from URL:", id);
-  if (!products) {
+  if (!product) {
     return <h2>Loading...</h2>;
   }
-  const addtoCart = (product) => {
-    toast.success("Added to Wishlist!", { autoClose: 1000 });
+  const addtoCart = () => {
+    // 1. Load existing cart from state or localStorage
+    const existingCart = cart.length
+      ? cart
+      : JSON.parse(localStorage.getItem("cartProduct")) || [];
 
-    const index = cart.findIndex((item) => item.id === product.id);
+    // 2. Check if product already exists
+    const index = existingCart.findIndex((item) => item.id === product.id);
 
-    if (index !== -1) {
-      // product already in cart
-      const updatedCart = [...cart];
-      updatedCart[index].quantity += 1;
+    if (index === -1) {
+      // Product does not exist → add it
+      const updatedCart = [...existingCart, { ...product, quantity: 1 }];
+
+      // 3. Update React state
       setCart(updatedCart);
-    } else {
-      // new product
-      setCart([...cart, { ...product, quantity: 1 }]);
-      localStorage.setItem("cartProduct", JSON.stringify(products));
 
-      console.log("Saved to localStorage");
+      // 4. Save entire cart to localStorage
+      localStorage.setItem("cartProduct", JSON.stringify(updatedCart));
+
+      toast.success("Added to Cart!", { autoClose: 1000 });
+      console.log("updatedCart", updatedCart);
+    } else {
+      toast.info("Product is already in your cart", { autoClose: 1000 });
+      console.log("Product already exists in cart");
     }
   };
 
   return (
     <>
-      <Navbar></Navbar>
-      <ViewProduct viewitem={products}></ViewProduct>
-
-      <button
-        className={`btn btn-danger ${styles.customBtn}`}
-        onClick={addtoCart}
-      >
-        <FaRegHeart size={20} /> Add to cart
-      </button>
-      <button className={`btn btn-success ${styles.customBtn}`}>
-        <RiFeedbackFill size={20} />
-        Rate Now
-      </button>
-      <ToastProvider></ToastProvider>
-
-      <Footer></Footer>
+      <div>
+        <Navbar></Navbar>
+        <ViewProduct viewitem={product}></ViewProduct>
+        <div className={styles.buttonDiv}>
+          <button
+            className={`btn btn-primary ${styles.customBtn}`}
+            onClick={addtoCart}
+          >
+            <IoCartSharp size={20} /> Add to cart
+          </button>
+          <button className={`btn btn-danger ${styles.customBtn}`}>
+            <FaRegHeart size={20} /> Add to Wishlist
+          </button>
+          <button className={`btn btn-success ${styles.customBtn}`}>
+            <RiFeedbackFill size={20} />
+            Rate Now
+          </button>
+        </div>
+        <ToastProvider></ToastProvider>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

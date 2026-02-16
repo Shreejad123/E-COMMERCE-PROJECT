@@ -1,11 +1,16 @@
-import { useState } from "react";
 function Cart() {
-  const storedProduct = JSON.parse(localStorage.getItem("cartProduct"));
+  const storedCart = JSON.parse(localStorage.getItem("cartProduct")) || [];
+
+  console.log("storedCart", storedCart);
+  console.log("storedCart Price", storedCart.price);
 
   return (
     <div>
-      <h2>{storedProduct?.title}</h2>
-      <p>Price: ${storedProduct?.price}</p>
+      {storedCart.map((storedProduct) => (
+        <li key={storedProduct.id}>
+          <li>Name: {storedProduct.title}</li>
+        </li>
+      ))}
     </div>
   );
 }
