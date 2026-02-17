@@ -23,7 +23,11 @@ function NavBar() {
               <IoPersonSharp size={22} />
             </li>
             <li className="icons">
-              <IoCartSharp size={22} />
+              <IoCartSharp
+                size={22}
+                className="icons"
+                onClick={() => navigate("/cart")}
+              />
             </li>
             <li>
               <MdGTranslate size={22} />

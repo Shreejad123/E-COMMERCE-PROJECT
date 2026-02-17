@@ -1,16 +1,30 @@
+import Navbar from "../components/navBar";
+import CartView from "./cartView";
+import Footer from "../components/Footer";
+import { useState } from "react";
+
 function Cart() {
-  const storedCart = JSON.parse(localStorage.getItem("cartProduct")) || [];
+  const [storedProduct, setStoredProduct] = useState(() => {
+    return JSON.parse(localStorage.getItem("cartProduct")) || [];
+  });
 
-  console.log("storedCart", storedCart);
-  console.log("storedCart Price", storedCart.price);
-
+  const deleteCart = (id) => {
+    const filteredItem = storedProduct.filter((item) => item.id !== id);
+    setStoredProduct(filteredItem);
+    localStorage.setItem("cartProduct", JSON.stringify(filteredItem));
+  };
   return (
     <div>
-      {storedCart.map((storedProduct) => (
-        <li key={storedProduct.id}>
-          <li>Name: {storedProduct.title}</li>
-        </li>
+      <Navbar></Navbar>
+      <h3>All Cart Products</h3>
+      {storedProduct.map((storedProduct) => (
+        <CartView
+          key={storedProduct.id}
+          cartView={storedProduct}
+          deleteCart={deleteCart}
+        ></CartView>
       ))}
+      <Footer></Footer>
     </div>
   );
 }
