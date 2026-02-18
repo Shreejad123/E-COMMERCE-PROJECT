@@ -1,11 +1,12 @@
 import styles from "./cartView.module.css";
+import { MdDelete } from "react-icons/md";
 function CartView({ cartView, deleteCart }) {
   return (
     <>
       <div>
         <div className={styles.container}>
           <div className={styles.imageSection}>
-            <h5 className={styles.header}>{cartView.title}</h5>
+            <h5 className={styles.headerTitle}>{cartView.title}</h5>
             <img
               className={styles.img}
               src={cartView.image}
@@ -21,11 +22,11 @@ function CartView({ cartView, deleteCart }) {
               onClick={() => deleteCart(cartView.id)}
               className={`btn btn-primary ${styles.customBtn}`}
             >
-              Remove from Cart
+              Remove from Cart <MdDelete />
             </button>
             <button
               type="button"
-              className={`btn btn-primary ${styles.customBtn}`}
+              className={`btn btn-danger ${styles.customBtn}`}
             >
               Add to Wishlist
             </button>

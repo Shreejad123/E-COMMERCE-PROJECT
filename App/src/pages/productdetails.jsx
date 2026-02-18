@@ -59,12 +59,12 @@ const ProductDetails = () => {
   }, [searchInput, products]);
   useEffect(() => {
     if (filterCategory === "") {
-      setFilteredData(products);
+      setFilteredProducts(products);
     } else {
       const newFilteredData = products.filter(
         (item) => item.category === filterCategory,
       );
-      setFilteredData(newFilteredData);
+      setFilteredProducts(newFilteredData);
     }
   }, [filterCategory, products]);
   return (

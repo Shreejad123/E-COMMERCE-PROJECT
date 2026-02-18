@@ -2,6 +2,7 @@ import Navbar from "../components/navBar";
 import CartView from "./cartView";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import styles from "./cartView.module.css";
 
 function Cart() {
   const [storedProduct, setStoredProduct] = useState(() => {
@@ -16,7 +17,7 @@ function Cart() {
   return (
     <div>
       <Navbar></Navbar>
-      <h3>All Cart Products</h3>
+      <h3 className={styles.header}>All Cart Products</h3>
       {storedProduct.map((storedProduct) => (
         <CartView
           key={storedProduct.id}

@@ -5,7 +5,7 @@
   display: flex;
   border: 1px solid;
   margin-top: 20px;
-  width: 900px;
+  width: 800px;
   height: 250px;
   border-radius: 10px;
   margin-left: 200px;
@@ -27,13 +27,20 @@
   margin-right: 30px;
   display: block;
   margin-top: 20px;
+  color: darkblue;
 }
 .customBtn {
+  margin-top: 40px;
+  margin-right: 30px;
+  width: 180px;
+}
+.headerTitle {
+  width: 400px;
+  margin-left: 180px;
   margin-top: 20px;
-  display: block;
-  margin-right: 50px;
 }
 .header {
-  width: 400px;
-  margin-left: 100px;
+  margin-top: 50px;
+  margin-left: 200px;
+  color: darkblue;
 }

@@ -1,5 +1,4 @@
 import styles from "./navbar.module.css";
-import { FaSearch } from "react-icons/fa";
 import { IoCartSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGTranslate } from "react-icons/md";
@@ -13,19 +12,19 @@ function NavBar() {
       <div>
         <ul className={styles.Navbar}>
           <li>
-            <span className={styles.shopEase}>
+            <span className={styles.shopEase} onClick={() => navigate("/")}>
               <IoCartSharp size={25} />
               &nbsp;&nbsp;ShopEase
             </span>
           </li>
           <ul className={styles.iconsContainer}>
-            <li className="icons" onClick={() => navigate("/login")}>
+            <li className={styles.icons} onClick={() => navigate("/login")}>
               <IoPersonSharp size={22} />
             </li>
-            <li className="icons">
+            <li className={styles.icons}>
               <IoCartSharp
                 size={22}
-                className="icons"
+                className={styles.icons}
                 onClick={() => navigate("/cart")}
               />
             </li>
