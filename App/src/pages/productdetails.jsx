@@ -46,18 +46,6 @@ const ProductDetails = () => {
     setProducts(sortedProducts);
   }
   useEffect(() => {
-    if (searchInput === "") {
-      setFilteredProducts(products);
-      return;
-    }
-
-    const filterBySearch = products.filter((item) =>
-      item.title.toLowerCase().includes(searchInput.toLowerCase()),
-    );
-
-    setFilteredProducts(filterBySearch);
-  }, [searchInput, products]);
-  useEffect(() => {
     if (filterCategory === "") {
       setFilteredProducts(products);
     } else {
@@ -67,6 +55,19 @@ const ProductDetails = () => {
       setFilteredProducts(newFilteredData);
     }
   }, [filterCategory, products]);
+  useEffect(() => {
+    if (searchInput === "") {
+      setFilteredProducts(filteredData);
+      return;
+    }
+
+    const filterBySearch = filteredData.filter((item) =>
+      item.title.toLowerCase().includes(searchInput.toLowerCase()),
+    );
+
+    setFilteredProducts(filterBySearch);
+  }, [searchInput, products]);
+
   return (
     <div>
       <Header></Header>

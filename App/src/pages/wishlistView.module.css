@@ -1,0 +1,46 @@
+.img {
+  width: 50px;
+}
+.container {
+  display: flex;
+  border: 1px solid;
+  margin-top: 20px;
+  width: 800px;
+  height: 250px;
+  border-radius: 10px;
+  margin-left: 200px;
+}
+.container:hover {
+  border: 2px solid darkblue;
+}
+.imageSection {
+  flex: 1; /* Makes each column take up an equal amount of available space */
+  padding: 10px;
+
+  box-sizing: border-box; /* Ensures padding/border are included in the 100% width */
+}
+.card {
+  margin-top: 80px;
+}
+.paragraph {
+  text-align: center;
+  margin-right: 30px;
+  display: block;
+  margin-top: 20px;
+  color: darkblue;
+}
+.customBtn {
+  margin-top: 40px;
+  margin-right: 30px;
+  width: 180px;
+}
+.headerTitle {
+  width: 400px;
+  margin-left: 180px;
+  margin-top: 20px;
+}
+.header {
+  margin-top: 50px;
+  margin-left: 200px;
+  color: darkblue;
+}

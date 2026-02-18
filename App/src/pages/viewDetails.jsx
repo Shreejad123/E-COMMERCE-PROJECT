@@ -14,8 +14,8 @@ import { IoCartSharp } from "react-icons/io5";
 const ViewDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -33,22 +33,17 @@ const ViewDetails = () => {
     return <h2>Loading...</h2>;
   }
   const addtoCart = () => {
-    // 1. Load existing cart from state or localStorage
     const existingCart = cart.length
       ? cart
       : JSON.parse(localStorage.getItem("cartProduct")) || [];
 
-    // 2. Check if product already exists
     const index = existingCart.findIndex((item) => item.id === product.id);
 
     if (index === -1) {
-      // Product does not exist → add it
       const updatedCart = [...existingCart, { ...product, quantity: 1 }];
 
-      // 3. Update React state
       setCart(updatedCart);
 
-      // 4. Save entire cart to localStorage
       localStorage.setItem("cartProduct", JSON.stringify(updatedCart));
 
       toast.success("Added to Cart!", { autoClose: 1000 });
@@ -58,7 +53,28 @@ const ViewDetails = () => {
       console.log("Product already exists in cart");
     }
   };
+  const addtoWishlist = () => {
+    console.log("Product already ");
+    const wishlistCart = wishlist.length
+      ? wishlist
+      : JSON.parse(localStorage.getItem("wishlistProducts")) || [];
 
+    const index = wishlistCart.findIndex((item) => item.id === product.id);
+
+    if (index === -1) {
+      const updatedWishlist = [...wishlistCart, { ...product, quantity: 1 }];
+
+      setWishlist(updatedWishlist);
+
+      localStorage.setItem("wishlistProducts", JSON.stringify(updatedWishlist));
+
+      toast.success("Added to Wishlist!", { autoClose: 1000 });
+      console.log("updatedWishlist", updatedWishlist);
+    } else {
+      toast.info("Product is already in your wishlist", { autoClose: 1000 });
+      console.log("Product already exists in wishlist");
+    }
+  };
   return (
     <>
       <div>
@@ -71,7 +87,10 @@ const ViewDetails = () => {
           >
             <IoCartSharp size={20} /> Add to cart
           </button>
-          <button className={`btn btn-danger ${styles.customBtn}`}>
+          <button
+            className={`btn btn-danger ${styles.customBtn}`}
+            onClick={addtoWishlist}
+          >
             <FaRegHeart size={20} /> Add to Wishlist
           </button>
           <button className={`btn btn-success ${styles.customBtn}`}>

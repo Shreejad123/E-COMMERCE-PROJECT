@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ErrorMessage from "./pages/ErrorPage";
 import Cart from "./pages/Cart";
+import Wishlist from "./pages/wishlist";
 function Router() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function Router() {
         <Route path="/register" element={<Register />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="*" element={<ErrorMessage />} />
+        <Route path="/Wishlist" element={<Wishlist />} />
       </Routes>
     </BrowserRouter>
   );
