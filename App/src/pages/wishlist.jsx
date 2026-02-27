@@ -2,6 +2,8 @@ import WishlistView from "./wishListView";
 
 import styles from "./wishlistView.module.css";
 import { useState } from "react";
+import NavBar from "../components/navBar";
+import Footer from "../components/Footer";
 function Wishlist() {
   const [storedProduct, setStoredProduct] = useState(() => {
     return JSON.parse(localStorage.getItem("wishlistProducts")) || [];
@@ -14,13 +16,15 @@ function Wishlist() {
   // };
   return (
     <>
-      <h3 className={styles.header}>All Cart Products</h3>
+      <NavBar></NavBar>
+      <h3 className={styles.header}>All Wishlist Products</h3>
       {storedProduct.map((storedProduct) => (
         <WishlistView
           key={storedProduct.id}
           Wishlistproduct={storedProduct}
         ></WishlistView>
       ))}
+      <Footer></Footer>
     </>
   );
 }

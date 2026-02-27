@@ -20,7 +20,7 @@ function WishlistView({ Wishlistproduct }) {
               type="button"
               className={`btn btn-danger ${styles.customBtn}`}
             >
-              Add to Wishlist
+              Remove from Wishlist
             </button>
           </div>
         </div>
