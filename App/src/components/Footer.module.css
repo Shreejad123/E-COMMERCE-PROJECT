@@ -9,14 +9,15 @@ article {
   padding: 5px;
   background-color: darkblue;
   color: white;
-  width: 100%;
-  justify-content: space-around;
+  width: 1300px;
+  margin-top: 20px;
 }
 .links {
   list-style-type: none;
 }
 .links li {
   margin-top: 15px;
+  margin-left: 200px;
 }
 .Header {
   margin: 80px;
@@ -24,21 +25,4 @@ article {
 }
 .links:hover {
   cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .links {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .links li {
-    margin-left: 0; /* Remove large left spacing on mobile */
-  }
 }
