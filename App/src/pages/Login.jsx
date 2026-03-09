@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
-// import Swal from "sweetalert2";
-import { FaGoogle } from "react-icons/fa";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -41,10 +39,9 @@ function LoginForm() {
         password,
       };
       console.log("loginDetails", loginDetails);
-      Swal.fire("Login sucessful!");
 
       console.log("Logging in with:", { email, password });
-      navigate("/dashboard");
+      navigate("/");
     }
   };
   return (
