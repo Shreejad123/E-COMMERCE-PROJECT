@@ -6,32 +6,28 @@ import LanguageDropdown from "./languageDropdown";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
-import { useState } from "react";
 
 function NavBar() {
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
   return (
     <>
       <div>
-        <nav className={styles.Navbar}>
-          <span className={styles.shopEase} onClick={() => navigate("/")}>
-            <IoCartSharp size={25} />
-            &nbsp;&nbsp;ShopEase
-          </span>
-          <div className={styles.hamburger} onClick={() => setOpen(!open)}>
-            ☰
-          </div>
-          <ul className={`${styles.menu} ${open ? styles.active : ""}`}>
-            <li>
-              &nbsp;&nbsp;
-              <FaHome
-                className={styles.icons}
-                size={25}
-                onClick={() => navigate("/")}
-              />
-            </li>
-
+        <ul className={styles.Navbar}>
+          <li>
+            <span className={styles.shopEase} onClick={() => navigate("/")}>
+              <IoCartSharp size={25} />
+              &nbsp;&nbsp;ShopEase
+            </span>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <FaHome
+              className={styles.icons}
+              size={25}
+              onClick={() => navigate("/")}
+            />
+          </li>
+          <ul className={styles.iconsContainer}>
             <li className={styles.icons} onClick={() => navigate("/login")}>
               <IoPersonSharp size={22} />
             </li>
@@ -52,7 +48,7 @@ function NavBar() {
               <LanguageDropdown />
             </li>
           </ul>
-        </nav>
+        </ul>
       </div>
     </>
   );

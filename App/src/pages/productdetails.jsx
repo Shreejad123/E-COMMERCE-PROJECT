@@ -70,7 +70,7 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Header></Header>
+      <Header className={styles.Header}></Header>
       <div>
         <select
           className={styles.categoryDropdown}
