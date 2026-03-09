@@ -1,6 +1,6 @@
 import Navbar from "../components/navBar";
 import CartView from "./cartView";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import { useState } from "react";
 import styles from "./cartView.module.css";
 
