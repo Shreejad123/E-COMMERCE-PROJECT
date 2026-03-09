@@ -13,7 +13,6 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<App />} />
         <Route path="/view-details/:id" element={<ViewDetails />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="*" element={<ErrorMessage />} />
         <Route path="/Wishlist" element={<Wishlist />} />
