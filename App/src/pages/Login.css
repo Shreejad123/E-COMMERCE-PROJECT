@@ -71,6 +71,12 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: var(--spacing-lg);
+    margin-left: 10px;
+  }
+
+  .btn-submit {
+    width: 90%;
+    margin-left: 10px;
   }
 }
 
@@ -239,7 +245,7 @@ header p {
 /* Primary Button */
 .btn-submit {
   margin-top: 15px;
-  width: 100%;
+  width: 90%;
   height: 52px;
   background-color: var(--primary-color);
   color: white;
