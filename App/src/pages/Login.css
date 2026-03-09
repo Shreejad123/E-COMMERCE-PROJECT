@@ -55,6 +55,11 @@ body {
   border-radius: var(--border-radius);
   transition: var(--transition);
 }
+input {
+  margin-left: 200px;
+  margin-top: 10px;
+  width: 400px;
+}
 
 /* Mobile full screen logic */
 @media (max-width: 640px) {
