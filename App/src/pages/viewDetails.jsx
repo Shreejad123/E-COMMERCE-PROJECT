@@ -5,7 +5,7 @@ import { RiFeedbackFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ToastProvider from "./toastmessage";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import Navbar from "../components/navBar";
 import ViewProduct from "./viewPage";
 import styles from "./viewDetails.module.css";

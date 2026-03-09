@@ -1,4 +1,4 @@
-import ProductDetails from "./pages/productdetails";
+import ProductDetails from "./pages/productDetails";
 import NavBar from "./components/navBar";
 import Login from "./pages/Login";
 import "./i18n";
