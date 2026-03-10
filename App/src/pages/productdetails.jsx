@@ -3,9 +3,9 @@ import styles from "./productDetails.module.css";
 import Product from "./product";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
+import Header from "./header";
 import axios from "axios";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -71,7 +71,7 @@ const ProductDetails = () => {
   return (
     <div>
       <Header className={styles.Header}></Header>
-      <div>
+      <div className={styles.filter}>
         <select
           className={styles.categoryDropdown}
           value={filterCategory}

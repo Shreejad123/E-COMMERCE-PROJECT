@@ -1,4 +1,4 @@
-import styles from "./ErrorPage.module.css";
+import styles from "./errorPage.module.css";
 import { useNavigate } from "react-router-dom";
 import logo from "./logo.png";
 function ErrorMessage() {

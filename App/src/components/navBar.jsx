@@ -1,4 +1,4 @@
-import styles from "./navbar.module.css";
+import styles from "./navBar.module.css";
 import { IoCartSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGTranslate } from "react-icons/md";

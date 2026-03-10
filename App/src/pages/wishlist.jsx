@@ -3,7 +3,7 @@ import WishlistView from "./wishListView";
 import styles from "./wishlistView.module.css";
 import { useState } from "react";
 import NavBar from "../components/navBar";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 function Wishlist() {
   const [storedProduct, setStoredProduct] = useState(() => {
     return JSON.parse(localStorage.getItem("wishlistProducts")) || [];

@@ -1,4 +1,4 @@
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 import { IoCartSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 function Footer() {

@@ -4,11 +4,10 @@ body {
 
 .errorContainer {
   text-align: center;
-  padding: 20px;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   background-color: #e8e8e8;
-  /* Ensures children are positioned in 3D space */
 }
 
 .errorInfo {
@@ -24,8 +23,4 @@ body {
 .customBtn {
   background-color: darkblue;
   border: darkblue;
-}
-
-.imageContainer {
-  height: 250px;
 }
