@@ -22,7 +22,7 @@
   height: 30px;
   margin-top: 20px;
   margin-left: 90px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-radius: 5px;
   padding: 5px;
 }
@@ -37,11 +37,12 @@ option:checked {
   display: block;
 }
 .SearchBar {
-  width: 200px;
+  width: 250px;
   padding: 5px;
   border-radius: 6px;
   display: inline;
+  margin-left: 160px;
 }
 .footerSection {
-  margin-top: 20px;
+  margin-top: 100px;
 }
