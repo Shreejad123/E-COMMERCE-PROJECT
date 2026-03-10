@@ -45,7 +45,7 @@ function LoginForm() {
     }
   };
   return (
-    <section id="loginView" className={styles.loginContainer}>
+    <div id="loginView" className={styles.loginContainer}>
       <div className={styles.branding}>
         <img src={loginImage} alt="Background" />
       </div>
@@ -94,7 +94,7 @@ function LoginForm() {
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 }
 
