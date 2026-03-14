@@ -79,3 +79,13 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .loginForm {
+    margin-top: 20px;
+  }
+}

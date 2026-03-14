@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ToastProvider from "./toastmessage";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -39,10 +42,12 @@ function LoginForm() {
         password,
       };
       console.log("loginDetails", loginDetails);
-
+      toast.success("logging in!", { autoClose: 1000 });
       console.log("Logging in with:", { email, password });
-      navigate("/");
     }
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
   };
   return (
     <div id="loginView" className={styles.loginContainer}>
@@ -94,6 +99,7 @@ function LoginForm() {
           </div>
         </form>
       </div>
+      <ToastProvider></ToastProvider>
     </div>
   );
 }
