@@ -3,27 +3,24 @@ body {
   padding: 0;
 }
 
-h2,
-p {
-  margin: 10px;
+.mobileMenu {
+  display: none;
 }
-
+span {
+  cursor: pointer;
+}
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
   background-color: darkblue;
 }
 
 ul li {
-  float: left;
-}
-
-ul li {
-  display: block;
   color: white;
-  text-align: center;
+
   padding: 14px 16px;
   text-decoration: none;
 }
@@ -32,22 +29,61 @@ ul li a:hover {
   background-color: #111111;
 }
 
-.Navbar {
-  border-radius: 5px;
-  width: 1280px;
-  height: 55px;
-}
 .shopEase {
-  margin-top: 10px;
   color: white;
   font-size: 20px;
-  margin-left: 50px;
+
   width: 100%;
   cursor: pointer;
 }
-ul .iconsContainer {
-  margin-left: 850px;
-}
+
 .icons:hover {
   cursor: pointer;
+}
+.header {
+  width: 80rem;
+  position: relative;
+}
+.navOptions li {
+  display: flex;
+  margin: auto;
+}
+@media (max-width: 648px) {
+  .header {
+    padding: 0px 10px;
+    position: relative;
+  }
+
+  .navOptions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    transition: all 0.5s ease;
+    gap: 0;
+    background-color: darkblue;
+  }
+
+  .active {
+    left: 0;
+
+    opacity: 1;
+    z-index: 1000;
+  }
+
+  .mobileMenu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+  }
+
+  .menuIcon {
+    width: 45px;
+    height: 45px;
+  }
 }
