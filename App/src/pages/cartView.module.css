@@ -1,46 +1,67 @@
 .img {
-  width: 50px;
+  width: 15%;
 }
 .container {
   display: flex;
   border: 1px solid;
-  margin-top: 20px;
-  width: 800px;
-  height: 250px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 70%;
+  height: 25%;
   border-radius: 10px;
-  margin-left: 200px;
+  margin-left: 15%;
 }
 .container:hover {
   border: 2px solid darkblue;
 }
 .imageSection {
-  flex: 1; /* Makes each column take up an equal amount of available space */
-  padding: 10px;
+  flex: 1;
+  padding: 2%;
+  box-sizing: border-box;
+}
 
-  box-sizing: border-box; /* Ensures padding/border are included in the 100% width */
-}
-.card {
-  margin-top: 80px;
-}
 .paragraph {
   text-align: center;
-  margin-right: 30px;
   display: block;
-  margin-top: 20px;
   color: darkblue;
 }
 .customBtn {
-  margin-top: 40px;
-  margin-right: 30px;
-  width: 180px;
+  margin-top: 10%;
+  margin-right: 10%;
+  width: 90%;
 }
 .headerTitle {
-  width: 400px;
-  margin-left: 180px;
-  margin-top: 20px;
+  margin-left: 25%;
 }
 .header {
-  margin-top: 50px;
-  margin-left: 200px;
+  margin-top: 5%;
+  margin-left: 15%;
   color: darkblue;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 25%;
+    margin-left: 38%;
+  }
+  .customBtn {
+    width: 60%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+  .img {
+    width: 20%;
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+  .headerTitle {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  .paragraph {
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+  }
 }
