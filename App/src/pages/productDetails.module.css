@@ -1,31 +1,27 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   width: 80%;
-  margin-left: 90px;
-}
-
-.grid-item {
-  padding: 2em;
-
-  text-align: center;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .container {
   width: 100%;
-  height: 430px;
+  height: 100%;
 }
-
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
 .categoryDropdown {
   width: 20%;
-  height: 30px;
-  margin-top: 20px;
-  margin-left: 90px;
-  margin-bottom: 40px;
-  border-radius: 5px;
   padding: 5px;
 }
+
 option:checked {
   background-color: white;
   color: darkblue;
@@ -41,8 +37,15 @@ option:checked {
   padding: 5px;
   border-radius: 6px;
   display: inline;
-  margin-left: 160px;
 }
-.footerSection {
-  margin-top: 100px;
+
+@media (max-width: 700px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  .filter {
+    flex-direction: column;
+  }
 }

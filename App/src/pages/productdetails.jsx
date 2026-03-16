@@ -69,13 +69,12 @@ const ProductDetails = () => {
   }, [searchInput, products]);
 
   return (
-    <div>
+    <div className={styles.products}>
       <div className={styles.filter}>
         <select
-          className={styles.categoryDropdown}
+          className={`filter-group ${styles.categoryDropdown}`}
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          name="fruits"
         >
           <option value="">All Categories</option>
           <option value="men's clothing">Men's Category</option>
@@ -83,16 +82,17 @@ const ProductDetails = () => {
           <option value="jewelery">jewelery</option>
           <option value="electronics">Electronics</option>
         </select>
+
         <select
           className={styles.categoryDropdown}
           aria-label=".form-select-lg example"
           id="sort-direction"
           onChange={(e) => sortByValue(e.target.value)}
-          name="fruits"
         >
           <option value="asc">Sort by Price low to High:</option>
           <option value="desc">Sort by Price High to Low:</option>
         </select>
+
         <input
           className={`form-control me-2 ${styles.SearchBar}`}
           value={searchInput}
