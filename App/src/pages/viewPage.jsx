@@ -36,12 +36,7 @@ function ViewProduct({ viewitem }) {
             <h5 className={styles.header}>
               <b>{viewitem.title}</b>
             </h5>
-            <p className={styles.category}>
-              <b>
-                Category:
-                {viewitem.category}{" "}
-              </b>
-            </p>
+
             <div>
               <img
                 className={styles.imageSection}
@@ -58,6 +53,12 @@ function ViewProduct({ viewitem }) {
                       {getStars(viewitem.rating.rate)}
                     </span>
                   </div>
+                </p>
+                <p className={styles.category}>
+                  <b>
+                    Category:
+                    {viewitem.category}{" "}
+                  </b>
                 </p>
                 <p>
                   <b>Key Features:</b>
