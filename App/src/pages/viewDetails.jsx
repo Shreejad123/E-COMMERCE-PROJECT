@@ -93,10 +93,6 @@ const ViewDetails = () => {
           >
             <FaRegHeart size={20} /> Add to Wishlist
           </button>
-          <button className={`btn btn-success ${styles.customBtn}`}>
-            <RiFeedbackFill size={20} />
-            Rate Now
-          </button>
         </div>
         <ToastProvider></ToastProvider>
         <Footer></Footer>
