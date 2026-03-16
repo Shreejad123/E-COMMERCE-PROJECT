@@ -12,7 +12,7 @@ function ErrorMessage() {
         <img className={styles.imageContainer} src={logo} alt="Logo" />
         <h1 className={styles.errorInfo}> 404 </h1>
         <p className={styles.errorMessage}>
-          Oops! The page you're looking for is not here.
+          Oops! The page you're looking for<br></br> is not here.
         </p>
         <button
           onClick={handleClick}
