@@ -21,10 +21,13 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setProducts(response.data);
-        setFilteredData(response.data);
-        setFilteredProducts(response.data);
+        const response = await axios.get("https://dummyjson.com/products");
+        //https://fakestoreapi.com/products
+        setProducts(response.data.products);
+        console.log("response", response.data.products);
+        console.log("category", response.data.products[0].category);
+        setFilteredData(response.data.products);
+        setFilteredProducts(response.data.products);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data: ", error);
