@@ -30,7 +30,7 @@ const Product = ({ productitem }) => {
       <div className={styles.cardLoading}>
         <div className={styles.card}>
           <div className={styles.imageSection}>
-            <img src={productitem.image} alt={productitem.title} />
+            <img src={productitem.images} alt={productitem.title} />
           </div>
           <div className={styles.section}>
             <h6>{productitem.title}</h6>

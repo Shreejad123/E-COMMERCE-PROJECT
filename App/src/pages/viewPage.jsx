@@ -1,5 +1,6 @@
 import styles from "./viewDetails.module.css";
 function ViewProduct({ viewitem }) {
+  console.log(viewitem, "viewitem");
   function getStars(rating) {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -40,7 +41,7 @@ function ViewProduct({ viewitem }) {
             <div>
               <img
                 className={styles.imageSection}
-                src={viewitem.image}
+                src={viewitem.images}
                 alt={viewitem.title}
               />
             </div>
@@ -50,7 +51,7 @@ function ViewProduct({ viewitem }) {
                   ${viewitem.price}{" "}
                   <div className={styles.starsContainer}>
                     <span className={styles.stars}>
-                      {getStars(viewitem.rating.rate)}
+                      {getStars(viewitem.rating)}
                     </span>
                   </div>
                 </p>

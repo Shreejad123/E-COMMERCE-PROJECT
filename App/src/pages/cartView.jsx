@@ -9,7 +9,7 @@ function CartView({ cartView, deleteCart }) {
             <h5 className={styles.headerTitle}>{cartView.title}</h5>
             <img
               className={styles.img}
-              src={cartView.image}
+              src={cartView.images}
               alt={cartView.title}
             />
 

@@ -8,7 +8,7 @@ function WishlistView({ Wishlistproduct }) {
             <h5 className={styles.headerTitle}>{Wishlistproduct.title}</h5>
             <img
               className={styles.img}
-              src={Wishlistproduct.image}
+              src={Wishlistproduct.images}
               alt={Wishlistproduct.title}
             />
 

@@ -18,7 +18,7 @@ const ViewDetails = () => {
   const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`https://dummyjson.com/products/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Product not found");
