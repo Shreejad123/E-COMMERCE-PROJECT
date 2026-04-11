@@ -10,21 +10,21 @@ const Product = ({ productitem }) => {
   };
 
   // Load saved language on refresh
-  // function getStars(rating) {
-  //   const stars = [];
-  //   for (let i = 0; i < 5; i++) {
-  //     if (rating - 1 < i) {
-  //       stars.push(
-  //         <span style={{ color: "blue", letterSpacing: "-1px" }}>☆</span>,
-  //       );
-  //     } else {
-  //       stars.push(
-  //         <span style={{ color: "blue", letterSpacing: "-1px" }}>★</span>,
-  //       );
-  //     }
-  //   }
-  //   return stars;
-  // }
+  function getStars(rating) {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (rating - 1 < i) {
+        stars.push(
+          <span style={{ color: "blue", letterSpacing: "-1px" }}>☆</span>,
+        );
+      } else {
+        stars.push(
+          <span style={{ color: "blue", letterSpacing: "-1px" }}>★</span>,
+        );
+      }
+    }
+    return stars;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.cardLoading}>
@@ -34,7 +34,7 @@ const Product = ({ productitem }) => {
           </div>
           <div className={styles.section}>
             <h6>{productitem.title}</h6>
-            <p className={styles.stars}>★{productitem.rating.rate}</p>
+            <p className={styles.stars}>★{productitem.rating}</p>
             <p>${productitem.price}</p>
 
             <button
