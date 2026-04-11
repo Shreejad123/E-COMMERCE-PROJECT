@@ -1,9 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./product.module.css";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ productitem }) => {
+  const [isVisible, setVisible] = useState(false);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/view-details/${productitem.id}`);
