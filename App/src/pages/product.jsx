@@ -3,9 +3,12 @@ import styles from "./product.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useInView } from "react-intersection-observer";
 const Product = ({ productitem }) => {
-  const [isVisible, setVisible] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/view-details/${productitem.id}`);
@@ -28,7 +31,15 @@ const Product = ({ productitem }) => {
     return stars;
   }
   return (
-    <div className={styles.container}>
+    <div
+      ref={ref}
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(20px)",
+        transition: "all 0.8s ease-out",
+      }}
+      className={styles.container}
+    >
       <div className={styles.cardLoading}>
         <div className={styles.card}>
           <div className={styles.imageSection}>

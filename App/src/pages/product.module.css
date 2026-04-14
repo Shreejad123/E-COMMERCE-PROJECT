@@ -24,9 +24,6 @@
   border-radius: 10px;
 }
 
-.card:hover {
-  box-shadow: 0 5em 2em gray;
-}
 .customBtn {
   background-color: darkblue;
   border: darkblue;
