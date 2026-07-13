@@ -1,6 +1,11 @@
 import styles from "./cartView.module.css";
 import { MdDelete } from "react-icons/md";
+
 function CartView({ cartView, deleteCart }) {
+  const usdPrice = cartView.price;
+  const exchangeRate = 95.71;
+
+  const inrPrice = usdPrice * exchangeRate;
   return (
     <>
       <div>
@@ -12,8 +17,7 @@ function CartView({ cartView, deleteCart }) {
               src={cartView.images}
               alt={cartView.title}
             />
-
-            <p className={styles.paragraph}>Price:$ {cartView.price}</p>
+            <p>₹{(cartView.price * 95.71).toFixed(2)}</p>
           </div>
 
           <div>

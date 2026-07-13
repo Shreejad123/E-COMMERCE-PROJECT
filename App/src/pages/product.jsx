@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+// const [hiddenImages, setHiddenImages] = useState({});
 const Product = ({ productitem }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -13,7 +14,14 @@ const Product = ({ productitem }) => {
   const handleClick = () => {
     navigate(`/view-details/${productitem.id}`);
   };
+  const usdPrice = productitem.price;
+  const exchangeRate = 95.71;
 
+  const inrPrice = usdPrice * exchangeRate;
+
+  console.log(inrPrice);
+
+  //console.log(totalInr);
   // Load saved language on refresh
   function getStars(rating) {
     const stars = [];
@@ -48,7 +56,7 @@ const Product = ({ productitem }) => {
           <div className={styles.section}>
             <h6>{productitem.title}</h6>
             <p className={styles.stars}>★{productitem.rating}</p>
-            <p>${productitem.price}</p>
+            <p>₹{(productitem.price * 95.71).toFixed(2)}</p>
 
             <button
               onClick={handleClick}

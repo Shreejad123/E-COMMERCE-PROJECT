@@ -50,56 +50,58 @@ function LoginForm() {
     }, 1500);
   };
   return (
-    <div id="loginView" className={styles.loginContainer}>
-      <div className={styles.branding}>
-        <img src={loginImage} alt="Background" />
-      </div>
-      <div className={styles.auth}>
-        <form className={styles.loginForm} onSubmit={handleSubmit}>
-          <h3 className={styles.header}>Login</h3>
+    <div className={styles.loginPage}>
+      <div id="loginView" className={styles.loginContainer}>
+        <div className={styles.branding}>
+          <img src={loginImage} alt="Background" />
+        </div>
+        <div className={styles.auth}>
+          <form className={styles.loginForm} onSubmit={handleSubmit}>
+            <h3 className={styles.header}>Login</h3>
 
-          <div>
-            <label htmlFor="Email">Email</label>
-
-            <div className={styles.email}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {errors.email && (
-                <p className={styles.errorMessage}>{errors.email}</p>
-              )}
-            </div>
-          </div>
-          <div className={styles.password}>
-            <label htmlFor="password">Password</label>
             <div>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {errors.password && (
-                <p style={{ color: "red" }}>{errors.password}</p>
-              )}
-            </div>
-          </div>
+              <label htmlFor="Email">Email</label>
 
-          <div>
-            {" "}
-            <button
-              type="submit"
-              className={`btn btn-primary ${styles.loginBtn}`}
-            >
-              Sign In
-            </button>
-          </div>
-        </form>
+              <div className={styles.email}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {errors.email && (
+                  <p className={styles.errorMessage}>{errors.email}</p>
+                )}
+              </div>
+            </div>
+            <div className={styles.password}>
+              <label htmlFor="password">Password</label>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {errors.password && (
+                  <p style={{ color: "red" }}>{errors.password}</p>
+                )}
+              </div>
+            </div>
+
+            <div>
+              {" "}
+              <button
+                type="submit"
+                className={`btn btn-primary ${styles.loginBtn}`}
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
+        <ToastProvider></ToastProvider>
       </div>
-      <ToastProvider></ToastProvider>
     </div>
   );
 }
