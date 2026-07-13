@@ -1,5 +1,9 @@
 import styles from "./wishlistView.module.css";
-function WishlistView({ Wishlistproduct }) {
+function WishlistView({ Wishlistproduct, deleteWishlist }) {
+  const usdPrice = Wishlistproduct.price;
+  const exchangeRate = 95.71;
+
+  const inrPrice = usdPrice * exchangeRate;
   return (
     <>
       <div>
@@ -12,12 +16,15 @@ function WishlistView({ Wishlistproduct }) {
               alt={Wishlistproduct.title}
             />
 
-            <p className={styles.paragraph}>Price:$ {Wishlistproduct.price}</p>
+            <p className={styles.paragraph}>
+              Price:₹{(Wishlistproduct.price * 95.71).toFixed(2)}
+            </p>
           </div>
 
           <div>
             <button
               type="button"
+              onClick={() => deleteWishlist(Wishlistproduct.id)}
               className={`btn btn-danger ${styles.customBtn}`}
             >
               Remove from Wishlist

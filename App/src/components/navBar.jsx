@@ -31,7 +31,7 @@ function NavBar() {
             click ? `${styles.navOptions} ${styles.active}` : styles.navOptions
           }
         >
-          <li>
+          <li className={styles.logo}>
             <span className={styles.shopEase} onClick={() => navigate("/")}>
               <IoCartSharp size={25} />
               &nbsp;ShopEase

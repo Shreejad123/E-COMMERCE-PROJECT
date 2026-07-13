@@ -27,6 +27,7 @@ const ProductDetails = () => {
         console.log("response", response.data.products);
         console.log("category", response.data.products[0].category);
         setFilteredData(response.data.products);
+
         setFilteredProducts(response.data.products);
         setIsLoading(false);
       } catch (error) {
@@ -36,10 +37,14 @@ const ProductDetails = () => {
     };
     fetchData();
   }, []);
-
+  const hiddenIds = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 28];
+  const visibleProducts = products.filter(
+    (product) => !hiddenIds.includes(product.id),
+  );
+  const categories = [...new Set(visibleProducts.map((item) => item.category))];
   function sortByValue(direction) {
     setSortDirection(direction);
-    const sortedProducts = [...products].sort((a, b) => {
+    const sortedProducts = [...visibleProducts].sort((a, b) => {
       if (direction === "asc") {
         return a.title.localeCompare(b.title);
       } else {
@@ -48,29 +53,21 @@ const ProductDetails = () => {
     });
     setProducts(sortedProducts);
   }
-  useEffect(() => {
-    if (filterCategory === "") {
-      setFilteredProducts(products);
-    } else {
-      const newFilteredData = products.filter(
-        (item) => item.category === filterCategory,
-      );
-      setFilteredProducts(newFilteredData);
-    }
-  }, [filterCategory, products]);
-  useEffect(() => {
-    if (searchInput === "") {
-      setFilteredProducts(filteredData);
-      return;
-    }
+  // useEffect(() => {
+  //   let result = visibleProducts;
 
-    const filterBySearch = filteredData.filter((item) =>
-      item.title.toLowerCase().includes(searchInput.toLowerCase()),
-    );
+  //   if (filterCategory !== "") {
+  //     result = result.filter((item) => item.category === filterCategory);
+  //   }
 
-    setFilteredProducts(filterBySearch);
-  }, [searchInput, products]);
+  //   if (searchInput !== "") {
+  //     result = result.filter((item) =>
+  //       item.title.toLowerCase().includes(searchInput.toLowerCase()),
+  //     );
+  //   }
 
+  //   setFilteredProducts(result);
+  // }, [filterCategory, searchInput, visibleProducts]);
   return (
     <div className={styles.products}>
       <div className={styles.filter}>
@@ -80,10 +77,12 @@ const ProductDetails = () => {
           onChange={(e) => setFilterCategory(e.target.value)}
         >
           <option value="">All Categories</option>
-          <option value="men's clothing">Men's Category</option>
-          <option value="women's clothing">Women's Category</option>
-          <option value="jewelery">jewelery</option>
-          <option value="electronics">Electronics</option>
+
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
 
         <select
@@ -107,8 +106,8 @@ const ProductDetails = () => {
       <div className={styles.gridContainer}>
         {isLoading ? (
           <p>Loading...</p>
-        ) : filteredProducts.length > 0 ? (
-          filteredProducts.map((item) => (
+        ) : visibleProducts.length > 0 ? (
+          visibleProducts.map((item) => (
             <Product key={item.id} productitem={item} />
           ))
         ) : (

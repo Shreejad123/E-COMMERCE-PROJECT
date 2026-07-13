@@ -1,39 +1,41 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .mobileMenu {
   display: none;
 }
 span {
   cursor: pointer;
 }
-ul {
-  list-style-type: none;
+body {
   margin: 0;
   padding: 0;
+}
+ul {
   display: flex;
   align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 40px;
+  list-style: none;
   background-color: darkblue;
 }
 
 ul li {
+  display: flex;
+  align-items: center;
   color: white;
-
-  padding: 14px 16px;
-  text-decoration: none;
+  padding: 18px 50px 18px 10px;
 }
 
 ul li a:hover {
   background-color: #111111;
 }
-
+.logo {
+  margin-right: auto;
+}
 .shopEase {
   color: white;
-  font-size: 20px;
+  font-size: 22px;
+  margin-right: auto;
 
-  width: 100%;
   cursor: pointer;
 }
 
@@ -41,13 +43,19 @@ ul li a:hover {
   cursor: pointer;
 }
 .header {
-  width: 80rem;
-  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
-.navOptions li {
-  display: flex;
-  margin: auto;
+.mobileMenu {
+  width: 100%;
 }
+.navBar {
+  width: 100%;
+  background: darkblue;
+}
+/* .navOptions {
+  width: 100%;
+} */
 @media (max-width: 700px) {
   .header {
     padding: 0px 10px;
