@@ -6,7 +6,7 @@ function WishlistView({ Wishlistproduct, deleteWishlist }) {
   const inrPrice = usdPrice * exchangeRate;
   return (
     <>
-      <div>
+      <div className={styles.card}>
         <div className={styles.container}>
           <div className={styles.imageSection}>
             <h5 className={styles.headerTitle}>{Wishlistproduct.title}</h5>
@@ -28,6 +28,13 @@ function WishlistView({ Wishlistproduct, deleteWishlist }) {
               className={`btn btn-danger ${styles.customBtn}`}
             >
               Remove from Wishlist
+            </button>
+            <button
+              type="button"
+              onClick={() => deleteWishlist(Wishlistproduct.id)}
+              className={`btn btn-info ${styles.customBtn}`}
+            >
+              Add to cart
             </button>
           </div>
         </div>

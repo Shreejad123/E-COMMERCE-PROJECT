@@ -24,9 +24,10 @@
 }
 .filter {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  margin-left: 7.813vw;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 150px;
 }
 .categoryDropdown {
   width: 20%;
@@ -58,5 +59,17 @@ option:checked {
   }
   .filter {
     flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .filter select {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+  }
+  .SearchBar {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
   }
 }
