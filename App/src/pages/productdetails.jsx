@@ -3,7 +3,7 @@ import styles from "./productDetails.module.css";
 import Product from "./product";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { useMemo } from "react";
 import axios from "axios";
 import Footer from "../components/footer";
 
@@ -53,21 +53,21 @@ const ProductDetails = () => {
     });
     setProducts(sortedProducts);
   }
-  // useEffect(() => {
-  //   let result = visibleProducts;
+  const filteredProduct = useMemo(() => {
+    let result = visibleProducts;
 
-  //   if (filterCategory !== "") {
-  //     result = result.filter((item) => item.category === filterCategory);
-  //   }
+    if (filterCategory !== "") {
+      result = result.filter((item) => item.category === filterCategory);
+    }
 
-  //   if (searchInput !== "") {
-  //     result = result.filter((item) =>
-  //       item.title.toLowerCase().includes(searchInput.toLowerCase()),
-  //     );
-  //   }
+    if (searchInput !== "") {
+      result = result.filter((item) =>
+        item.title.toLowerCase().includes(searchInput.toLowerCase()),
+      );
+    }
 
-  //   setFilteredProducts(result);
-  // }, [filterCategory, searchInput, visibleProducts]);
+    return result;
+  }, [visibleProducts, filterCategory, searchInput]);
   return (
     <div className={styles.products}>
       <div className={styles.filter}>
@@ -106,8 +106,8 @@ const ProductDetails = () => {
       <div className={styles.gridContainer}>
         {isLoading ? (
           <p>Loading...</p>
-        ) : visibleProducts.length > 0 ? (
-          visibleProducts.map((item) => (
+        ) : filteredProduct.length > 0 ? (
+          filteredProduct.map((item) => (
             <Product key={item.id} productitem={item} />
           ))
         ) : (

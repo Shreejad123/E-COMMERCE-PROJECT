@@ -1,15 +1,17 @@
 .img {
-  width: 15%;
+  width: 20%;
+  height: 10%;
 }
 .container {
-  display: flex;
   border: 1px solid;
   margin-top: 5%;
-  margin-bottom: 5%;
-  width: 70%;
-  height: 25%;
+  padding: 20px;
+  width: 50%;
+  height: 5%;
   border-radius: 10px;
   margin-left: 15%;
+  display: flex;
+  align-items: center;
 }
 .container:hover {
   border: 2px solid darkblue;
@@ -21,22 +23,24 @@
 }
 
 .paragraph {
-  text-align: center;
   display: block;
   color: darkblue;
+  margin-top: 0px;
+  margin-left: 5px;
 }
 .customBtn {
   margin-top: 10%;
   margin-right: 10%;
   width: 90%;
 }
-.headerTitle {
-  margin-left: 25%;
-}
+
 .header {
-  margin-top: 5%;
   margin-left: 15%;
   color: darkblue;
+  margin-top: 5%;
+}
+.card {
+  height: 5%;
 }
 @media (max-width: 768px) {
   .container {

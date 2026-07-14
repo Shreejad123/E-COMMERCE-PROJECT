@@ -25,6 +25,7 @@ function Wishlist() {
           key={storedProduct.id}
           Wishlistproduct={storedProduct}
           deleteWishlist={deleteWishlist}
+          className={styles.card}
         ></WishlistView>
       ))}
       <ToastContainer></ToastContainer>
