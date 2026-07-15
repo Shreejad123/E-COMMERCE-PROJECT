@@ -37,11 +37,16 @@
   margin-bottom: 1.875rem;
 }
 .container {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   justify-content: center;
   place-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 700px) {

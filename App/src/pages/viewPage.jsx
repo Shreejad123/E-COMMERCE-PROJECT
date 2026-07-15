@@ -1,5 +1,9 @@
 import styles from "./viewDetails.module.css";
 function ViewProduct({ viewitem }) {
+  const usdPrice = viewitem.price;
+  const exchangeRate = 95.71;
+
+  const inrPrice = usdPrice * exchangeRate;
   console.log(viewitem, "viewitem");
   function getStars(rating) {
     const stars = [];
@@ -48,7 +52,7 @@ function ViewProduct({ viewitem }) {
             <div className={styles.section}>
               <div className={styles.paragraph}>
                 <p>
-                  ${viewitem.price}{" "}
+                  ₹{(viewitem.price * 95.71).toFixed(2)}
                   <div className={styles.starsContainer}>
                     <span className={styles.stars}>
                       {getStars(viewitem.rating)}

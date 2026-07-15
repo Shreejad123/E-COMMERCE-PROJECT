@@ -6,7 +6,9 @@ import { useParams } from "react-router-dom";
 import { useMemo } from "react";
 import axios from "axios";
 import Footer from "../components/footer";
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import ProductCardSkeleton from "./Skeleton";
 const ProductDetails = () => {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
@@ -105,7 +107,9 @@ const ProductDetails = () => {
       </div>
       <div className={styles.gridContainer}>
         {isLoading ? (
-          <p>Loading...</p>
+          Array.from({ length: 15 }).map((_, index) => (
+            <ProductCardSkeleton key={index} />
+          ))
         ) : filteredProduct.length > 0 ? (
           filteredProduct.map((item) => (
             <Product key={item.id} productitem={item} />
