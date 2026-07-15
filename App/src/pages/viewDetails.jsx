@@ -11,11 +11,14 @@ import ViewProduct from "./viewPage";
 import styles from "./viewDetails.module.css";
 import Cart from "./Cart";
 import { IoCartSharp } from "react-icons/io5";
+import ProductCardSkeleton from "./Skeleton";
 const ViewDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -30,7 +33,7 @@ const ViewDetails = () => {
   }, [id]);
   console.log("ID from URL:", id);
   if (!product) {
-    return <h2>Loading...</h2>;
+    return <ProductCardSkeleton />;
   }
   const addtoCart = () => {
     const existingCart = cart.length
