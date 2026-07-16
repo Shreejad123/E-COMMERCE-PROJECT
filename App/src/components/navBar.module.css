@@ -22,7 +22,7 @@ ul li {
   display: flex;
   align-items: center;
   color: white;
-  padding: 18px 50px 18px 10px;
+  padding: 18px 20px 18px 10px;
 }
 
 ul li a:hover {

@@ -38,12 +38,12 @@ a {
 @media (max-width: 768px) {
   .footer {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     padding: 30px;
   }
 
   .logo,
   .column p {
-    justify-content: center;
+    justify-content: left;
   }
 }

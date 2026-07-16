@@ -80,8 +80,8 @@ const ViewDetails = () => {
   };
   return (
     <>
-      <div>
-        <Navbar></Navbar>
+      <Navbar></Navbar>
+      <div className={styles.containerCard}>
         <ViewProduct viewitem={product}></ViewProduct>
         <div className={styles.buttonDiv}>
           <button
@@ -97,9 +97,9 @@ const ViewDetails = () => {
             <FaRegHeart size={20} /> Add to Wishlist
           </button>
         </div>
-        <ToastProvider></ToastProvider>
-        <Footer></Footer>
       </div>
+      <ToastProvider></ToastProvider>
+      <Footer></Footer>
     </>
   );
 };

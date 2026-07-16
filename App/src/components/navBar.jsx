@@ -33,26 +33,26 @@ function NavBar() {
         >
           <li className={styles.logo}>
             <span className={styles.shopEase} onClick={() => navigate("/")}>
-              <IoCartSharp size={25} />
+              <IoCartSharp size={20} />
               &nbsp;ShopEase
             </span>
           </li>
           <li onClick={closeMobileMenu}>
             <span onClick={() => navigate("/")}>
-              <FaHome className={styles.icons} size={25} />
-              &nbsp; Home
+              <FaHome className={styles.icons} size={20} />
+              Home
             </span>
           </li>
           <li onClick={closeMobileMenu}>
             <span onClick={() => navigate("/login")}>
-              <IoPersonSharp size={22} className={styles.icons} /> &nbsp; Login
+              <IoPersonSharp size={20} className={styles.icons} /> Login
             </span>
           </li>
 
           <li onClick={closeMobileMenu}>
             <span onClick={() => navigate("/cart")}>
               <IoCartSharp size={22} className={styles.icons} />
-              &nbsp; Cart
+              Cart
             </span>
           </li>
           <li onClick={closeMobileMenu}>
