@@ -39,8 +39,8 @@
 .buttonDiv {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  margin-right: 25%;
+  /* justify-content: center; */
+  /* margin-right: 25%; */
   margin-bottom: 1.875rem;
 }
 .container {
@@ -57,17 +57,36 @@
 
 @media (max-width: 700px) {
   .header {
-    margin-left: 20%;
-    max-width: 300px;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: break-word;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-left: 10px;
   }
   .category {
-    margin-left: 20%;
+    font-size: 24px;
+    margin-left: 10px;
   }
 
   .buttonDiv {
     margin-left: 20%;
+    margin-left: 10px;
+  }
+  .containerCard {
+    width: 95%;
+    height: 100%;
+    padding: 10px;
+  }
+  .buttonDiv {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 0px;
+  }
+  .imageSection {
+    width: 50%;
+    height: 50%;
+  }
+  .paragraph p {
+    font-size: 24px;
+    margin-left: 10px;
   }
 }
