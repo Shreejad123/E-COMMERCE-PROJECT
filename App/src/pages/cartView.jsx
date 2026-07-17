@@ -17,7 +17,9 @@ function CartView({ cartView, deleteCart }) {
               src={cartView.images}
               alt={cartView.title}
             />
-            <p>₹{(cartView.price * 95.71).toFixed(2)}</p>
+            <p className={styles.price}>
+              ₹{(cartView.price * 95.71).toFixed(2)}
+            </p>
           </div>
 
           <div>
