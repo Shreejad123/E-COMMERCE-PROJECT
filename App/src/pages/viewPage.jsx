@@ -1,4 +1,5 @@
 import styles from "./viewDetails.module.css";
+
 function ViewProduct({ viewitem }) {
   const usdPrice = viewitem.price;
   const exchangeRate = 95.71;
@@ -51,13 +52,8 @@ function ViewProduct({ viewitem }) {
             </div>
             <div className={styles.section}>
               <div className={styles.paragraph}>
-                <p>
+                <p className={styles.price}>
                   ₹{(viewitem.price * 95.71).toFixed(2)}
-                  <div className={styles.starsContainer}>
-                    <span className={styles.stars}>
-                      {getStars(viewitem.rating)}
-                    </span>
-                  </div>
                 </p>
                 <p className={styles.category}>
                   <b>
@@ -65,6 +61,11 @@ function ViewProduct({ viewitem }) {
                     {viewitem.category}{" "}
                   </b>
                 </p>
+                <div className={styles.starsContainer}>
+                  <span className={styles.stars}>
+                    {getStars(viewitem.rating)}
+                  </span>
+                </div>
                 <p>
                   <b>Key Features:</b>
                 </p>
