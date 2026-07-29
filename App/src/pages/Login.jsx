@@ -1,6 +1,7 @@
 // LoginForm.js
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
 import { toast } from "react-toastify";
@@ -45,9 +46,9 @@ function LoginForm() {
       toast.success("logging in!", { autoClose: 1000 });
       console.log("Logging in with:", { email, password });
     }
-    setTimeout(() => {
-      navigate("/");
-    }, 1500);
+    // setTimeout(() => {
+    //   navigate("/");
+    // }, 1500);
   };
   return (
     <div className={styles.loginPage}>
@@ -97,6 +98,9 @@ function LoginForm() {
               >
                 Sign In
               </button>
+              <p className={styles.signup}>
+                Don't have an account? <Link to="/registration">Sign up</Link>
+              </p>
             </div>
           </form>
         </div>
