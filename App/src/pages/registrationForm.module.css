@@ -22,15 +22,14 @@
 .input {
   flex: 1;
   display: flex;
-
   gap: 6px;
 }
 .user_details {
   gap: 0px;
-  width: 100%;
+  width: 50%;
   /* display: grid;
   grid-template-columns: 1fr 2fr; */
-  max-width: 1000px;
+  /* max-width: 1000px; */
   padding: 20px;
   margin: 0 auto;
 
@@ -41,12 +40,8 @@
 }
 
 .inputs::placeholder {
-  color: rgba(
-    0,
-    0,
-    0,
-    0.6
-  ); /* Change the opacity value (0.0 to 1.0) as needed */
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
 }
 .input input {
   width: 100%;

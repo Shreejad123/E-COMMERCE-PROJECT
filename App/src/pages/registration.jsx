@@ -136,7 +136,7 @@ const Registration = () => {
 
       toast.success("Signup successful!");
       setTimeout(() => {
-        navigate("/LandingPage");
+        navigate("/");
       }, 2000);
 
       console.log("Email", email, "password", password);

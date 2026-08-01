@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./login.module.css";
-import loginImage from "../assets/image.png";
+import loginImage from "../assets/loginPage.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ToastProvider from "./toastmessage";
@@ -45,16 +45,16 @@ function LoginForm() {
       console.log("loginDetails", loginDetails);
       toast.success("logging in!", { autoClose: 1000 });
       console.log("Logging in with:", { email, password });
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     }
-    // setTimeout(() => {
-    //   navigate("/");
-    // }, 1500);
   };
   return (
     <div className={styles.loginPage}>
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
-          <img src={loginImage} alt="Background" />
+          <img src={loginImage} alt="Background" className={styles.image} />
         </div>
         <div className={styles.auth}>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
