@@ -9,6 +9,7 @@
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
+  margin-left: 5vw;
 }
 .containerCard {
   height: 100%;
@@ -31,10 +32,12 @@
 }
 .card {
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   height: 100%;
   display: flex;
   margin-top: 1.875rem;
+  justify-content: center;
+  align-items: center;
 }
 .buttonDiv {
   display: flex;
@@ -42,6 +45,10 @@
   /* justify-content: center; */
   /* margin-right: 25%; */
   margin-bottom: 1.875rem;
+  margin-left: 2vw;
+}
+.price {
+  margin-top: 50px;
 }
 .container {
   width: 100%;
@@ -50,11 +57,13 @@
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: center;
-  place-items: center;
+  /* justify-content: center;
+  place-items: center; */
   border-radius: 10px;
 }
-
+.section {
+  margin-left: 2vw;
+}
 @media (max-width: 700px) {
   .header {
     font-size: 30px;

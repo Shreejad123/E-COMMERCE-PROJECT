@@ -49,11 +49,11 @@ function NavBar() {
               &nbsp;Wishlist
             </span>
           </li>
-          <li onClick={closeMobileMenu}>
+          {/* <li onClick={closeMobileMenu}>
             <MdGTranslate className={styles.icons} />
 
             <LanguageDropdown />
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className={styles.header}>
