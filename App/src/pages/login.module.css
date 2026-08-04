@@ -10,12 +10,12 @@ body {
   background-color: #f5f5f5;
 }
 .loginContainer {
-  display: grid; /* Enables grid functionality */
-  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   justify-content: center;
   align-items: center;
-  /* background-color: #e8e8e8; */
+
   padding-right: 100px;
   padding-left: 50px;
   padding-bottom: 50px;
@@ -23,8 +23,6 @@ body {
   height: 30%;
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  /* margin-top: 50px;
-  margin: 50px; */
 }
 .branding {
   flex: 1;
