@@ -2,7 +2,7 @@ import styles from "./navBar.module.css";
 import { IoCartSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGTranslate } from "react-icons/md";
-// import LanguageDropdown from "./languageDropdown";
+
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";

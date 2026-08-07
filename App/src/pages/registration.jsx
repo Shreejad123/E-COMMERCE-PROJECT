@@ -6,21 +6,22 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import LeftPanel from "./leftSection";
+import loginImage from "../assets/depositphotos_42682071-stock-photo-young-woman-looking-at-the.jpg";
 // import loginImage from "../assets/doctorRegister.jpg";
 // import Skeleton from "react-loading-skeleton";
 // import "react-loading-skeleton/dist/skeleton.css";
 const Registration = () => {
   const navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState("");
+  const [fullName, setfullName] = useState("");
   const [lastName, setLastName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  const [firstNameError, setFirstNameError] = useState("");
-  const [lastNameError, setLastNameError] = useState("");
+  const [fullNameError, setfullNameError] = useState("");
+  // const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [contactError, setContactError] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -30,48 +31,48 @@ const Registration = () => {
   const phoneRegex = /^[0-9]{10}$/;
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-  const validateFirstName = (name) => {
+  const validatefullName = (name) => {
     if (!name.trim()) {
-      setFirstNameError("First name is required.");
+      setfullNameError("Full Name is required.");
       return false;
     }
     if (!nameRegex.test(name)) {
-      setFirstNameError(
+      setfullNameError(
         "Only letters, spaces, hyphens, and apostrophes allowed.",
       );
       return false;
     }
-    setFirstNameError("");
+    setfullNameError("");
     return true;
   };
 
-  const validateLastName = (name) => {
-    if (!name.trim()) {
-      setLastNameError("Last name is required.");
-      return false;
-    }
-    if (!nameRegex.test(name)) {
-      setLastNameError(
-        "Only letters, spaces, hyphens, and apostrophes allowed.",
-      );
-      return false;
-    }
-    setLastNameError("");
-    return true;
-  };
+  // const validateLastName = (name) => {
+  //   if (!name.trim()) {
+  //     setLastNameError("Last name is required.");
+  //     return false;
+  //   }
+  //   if (!nameRegex.test(name)) {
+  //     setLastNameError(
+  //       "Only letters, spaces, hyphens, and apostrophes allowed.",
+  //     );
+  //     return false;
+  //   }
+  //   setLastNameError("");
+  //   return true;
+  // };
 
-  const validateContact = (number) => {
-    if (!number.trim()) {
-      setContactError("Contact number is required.");
-      return false;
-    }
-    if (!phoneRegex.test(number)) {
-      setContactError("Contact number must be exactly 10 digits.");
-      return false;
-    }
-    setContactError("");
-    return true;
-  };
+  // const validateContact = (number) => {
+  //   if (!number.trim()) {
+  //     setContactError("Contact number is required.");
+  //     return false;
+  //   }
+  //   if (!phoneRegex.test(number)) {
+  //     setContactError("Contact number must be exactly 10 digits.");
+  //     return false;
+  //   }
+  //   setContactError("");
+  //   return true;
+  // };
   const validateEmail = (emailtest) => {
     if (!emailtest.trim()) {
       setEmailError("Email is required");
@@ -107,23 +108,23 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const isFirstNameValid = validateFirstName(firstName);
+    const isfullNameValid = validatefullName(fullName);
     const isLastNameValid = validateLastName(lastName);
     const isEmailValid = validateEmail(email);
-    const isvalidateContact = validateContact(contactNumber);
+    // const isvalidateContact = validateContact(contactNumber);
     const arePasswordsValid = validatePasswords(password, confirmPassword);
 
     if (
-      isFirstNameValid &&
+      isfullNameValid &&
       isLastNameValid &&
-      isvalidateContact &&
+      // isvalidateContact &&
       isEmailValid &&
       arePasswordsValid
     ) {
       console.log("Form submitted:", {
-        firstName,
+        fullName,
         lastName,
-        contactNumber,
+        // contactNumber,
         email,
         password,
         confirmPassword,
@@ -141,9 +142,9 @@ const Registration = () => {
 
       console.log("Email", email, "password", password);
 
-      setFirstName("");
+      setfullName("");
       setLastName("");
-      setContactNumber("");
+      // setContactNumber("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
@@ -153,28 +154,38 @@ const Registration = () => {
   return (
     <div>
       <div className={styles.user_details}>
-        <div className={styles.branding}></div>
         <h2 className={styles.header}>Register</h2>
+        <div className={styles.imageContainer}>
+          {/* {!loaded && <Skeleton className={styles.skeletonImage} />} */}
+          <img
+            src={loginImage}
+            alt="Background"
+            className={styles.image}
+            onLoad={() => setLoaded(true)}
+          />
+        </div>
+        <div className={styles.branding}></div>
+
         <div className={styles.imageContainer}>{/* <LeftPanel /> */}</div>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.user_form}>
             <div className={styles.input}>
-              <label htmlFor="firstNameInput">First Name</label>
+              <label htmlFor="fullNameInput">Full Name</label>
               <input
                 type="text"
-                id="firstNameInput"
-                value={firstName}
+                id="fullNameInput"
+                value={fullName}
                 placeholder="Enter your First Name"
                 className={`form-control ${styles.inputs}`}
                 onChange={(e) => {
-                  setFirstName(e.target.value);
+                  setfullName(e.target.value);
                 }}
               />
-              {firstNameError && (
-                <p className={styles.errorMessage}>{firstNameError}</p>
+              {fullNameError && (
+                <p className={styles.errorMessage}>{fullNameError}</p>
               )}
             </div>
-            <div className={styles.input}>
+            {/* <div className={styles.input}>
               <label htmlFor="lastNameInput">Last Name</label>
               <input
                 type="text"
@@ -187,7 +198,7 @@ const Registration = () => {
                 }}
               />
               {lastNameError && <p className={styles.errorMessage}></p>}
-            </div>
+            </div> */}
             <div className={styles.input}>
               <label htmlFor="Email">Email</label>
               <input
@@ -204,7 +215,7 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{emailError}</p>
               )}
             </div>
-            <div className={styles.input}>
+            {/* <div className={styles.input}>
               <label htmlFor="contactInput">Contact Number</label>
               <input
                 type="text"
@@ -219,7 +230,7 @@ const Registration = () => {
               {contactError && (
                 <p className={styles.errorMessage}>{contactError}</p>
               )}
-            </div>
+            </div> */}
             <div className={styles.input}>
               <label htmlFor="passwordInput">Password</label>
               <input
