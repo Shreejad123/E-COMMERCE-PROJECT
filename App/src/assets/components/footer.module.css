@@ -1,0 +1,49 @@
+.footer {
+  background: darkblue;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 50px 80px;
+  margin-top: 10px;
+}
+
+.column h3,
+.logo {
+  margin-bottom: 20px;
+}
+.column a {
+  text-decoration: none;
+  color: white;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.column p {
+  margin: 12px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column p:hover {
+  color: #d4d4ff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 30px;
+  }
+
+  .logo,
+  .column p {
+    justify-content: left;
+  }
+}

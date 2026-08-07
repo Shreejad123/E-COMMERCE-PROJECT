@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
-import loginImage from "../assets/shopping.jpg";
+import loginImage from "../assets/shoppingLogin.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
@@ -92,7 +92,7 @@ function LoginForm() {
         </div>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <div className={styles.auth}>
-            <h3 className={styles.header}>Login</h3>
+            <h4 className={styles.header}>Login</h4>
             <div>
               <div className={styles.email}>
                 <input
