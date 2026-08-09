@@ -11,7 +11,7 @@ import ViewProduct from "./viewPage";
 import styles from "./viewDetails.module.css";
 import Cart from "./Cart";
 import { IoCartSharp } from "react-icons/io5";
-import ProductCardSkeleton from "./Skeleton.jsx";
+import ProductCardSkeleton from "./ProductSkeleton.jsx";
 const ViewDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
