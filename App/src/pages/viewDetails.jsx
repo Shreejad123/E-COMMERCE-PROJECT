@@ -82,7 +82,10 @@ const ViewDetails = () => {
     <>
       <Navbar></Navbar>
       <div className={styles.containerCard}>
-        <ViewProduct viewitem={product}></ViewProduct>
+        <ViewProduct
+          viewitem={product}
+          className={styles.viewProduct}
+        ></ViewProduct>
         <div className={styles.buttonDiv}>
           <button
             className={`btn btn-primary ${styles.customBtn}`}
