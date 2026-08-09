@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import LeftPanel from "./leftSection";
-import loginImage from "../assets/depositphotos_42682071-stock-photo-young-woman-looking-at-the.jpg";
+import loginImage from "../assets/charlesdeluvio-FK81rxilUXg-unsplash.jpg";
 // import loginImage from "../assets/doctorRegister.jpg";
 // import Skeleton from "react-loading-skeleton";
 // import "react-loading-skeleton/dist/skeleton.css";
@@ -153,39 +153,38 @@ const Registration = () => {
 
   return (
     <div>
-      <div className={styles.user_details}>
-        <h2 className={styles.header}>Register</h2>
-        <div className={styles.imageContainer}>
-          {/* {!loaded && <Skeleton className={styles.skeletonImage} />} */}
-          <img
-            src={loginImage}
-            alt="Background"
-            className={styles.image}
-            onLoad={() => setLoaded(true)}
-          />
-        </div>
-        <div className={styles.branding}></div>
-
-        <div className={styles.imageContainer}>{/* <LeftPanel /> */}</div>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.user_form}>
-            <div className={styles.input}>
-              <label htmlFor="fullNameInput">Full Name</label>
-              <input
-                type="text"
-                id="fullNameInput"
-                value={fullName}
-                placeholder="Enter your First Name"
-                className={`form-control ${styles.inputs}`}
-                onChange={(e) => {
-                  setfullName(e.target.value);
-                }}
-              />
-              {fullNameError && (
-                <p className={styles.errorMessage}>{fullNameError}</p>
-              )}
-            </div>
-            {/* <div className={styles.input}>
+      <div className={styles.register}>
+        <h4 className={styles.bottomRight}>Create an Account</h4>
+        <div className={styles.user_details}>
+          {" "}
+          <div className={styles.imageContainer}>
+            <img
+              src={loginImage}
+              alt="Background"
+              className={styles.image}
+              onLoad={() => setLoaded(true)}
+            />
+          </div>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            {/* <h2 className={styles.header}>Register</h2> */}
+            <div className={styles.user_form}>
+              <div className={styles.input}>
+                <label htmlFor="fullNameInput">Full Name</label>
+                <input
+                  type="text"
+                  id="fullNameInput"
+                  value={fullName}
+                  placeholder="Enter your First Name"
+                  className={`form-control ${styles.inputs}`}
+                  onChange={(e) => {
+                    setfullName(e.target.value);
+                  }}
+                />
+                {fullNameError && (
+                  <p className={styles.errorMessage}>{fullNameError}</p>
+                )}
+              </div>
+              {/* <div className={styles.input}>
               <label htmlFor="lastNameInput">Last Name</label>
               <input
                 type="text"
@@ -199,23 +198,23 @@ const Registration = () => {
               />
               {lastNameError && <p className={styles.errorMessage}></p>}
             </div> */}
-            <div className={styles.input}>
-              <label htmlFor="Email">Email</label>
-              <input
-                type="email"
-                className={`form-control ${styles.inputs}`}
-                id="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              {emailError && (
-                <p className={styles.errorMessage}>{emailError}</p>
-              )}
-            </div>
-            {/* <div className={styles.input}>
+              <div className={styles.input}>
+                <label htmlFor="Email">Email</label>
+                <input
+                  type="email"
+                  className={`form-control ${styles.inputs}`}
+                  id="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                {emailError && (
+                  <p className={styles.errorMessage}>{emailError}</p>
+                )}
+              </div>
+              {/* <div className={styles.input}>
               <label htmlFor="contactInput">Contact Number</label>
               <input
                 type="text"
@@ -231,52 +230,54 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{contactError}</p>
               )}
             </div> */}
-            <div className={styles.input}>
-              <label htmlFor="passwordInput">Password</label>
-              <input
-                type="password"
-                className={`form-control ${styles.inputs}`}
-                id="passwordInput"
-                value={password}
-                placeholder="Enter your Password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              {passwordError && (
-                <p className={styles.errorMessage}>{passwordError}</p>
-              )}
+              <div className={styles.input}>
+                <label htmlFor="passwordInput">Password</label>
+                <input
+                  type="password"
+                  className={`form-control ${styles.inputs}`}
+                  id="passwordInput"
+                  value={password}
+                  placeholder="Enter your Password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                {passwordError && (
+                  <p className={styles.errorMessage}>{passwordError}</p>
+                )}
+              </div>
+              <div className={styles.input}>
+                <label htmlFor="confirmPasswordInput">Confirm Password</label>
+                <input
+                  type="password"
+                  className={`form-control ${styles.inputs}`}
+                  id="confirmPasswordInput"
+                  value={confirmPassword}
+                  placeholder="Re-Enter Password"
+                  onChange={(e) => {
+                    setConfirmPassword(e.target.value);
+                  }}
+                />
+                {confirmPasswordError && (
+                  <p className={styles.errorMessage}>{confirmPasswordError}</p>
+                )}
+              </div>
             </div>
-            <div className={styles.input}>
-              <label htmlFor="confirmPasswordInput">Confirm Password</label>
-              <input
-                type="password"
-                className={`form-control ${styles.inputs}`}
-                id="confirmPasswordInput"
-                value={confirmPassword}
-                placeholder="Re-Enter Password"
-                onChange={(e) => {
-                  setConfirmPassword(e.target.value);
-                }}
-              />
-              {confirmPasswordError && (
-                <p className={styles.errorMessage}>{confirmPasswordError}</p>
-              )}
+            <div className={styles.link}>
+              Already have an account ? &nbsp;<a href="/login">Login</a>
             </div>
-          </div>
-          <div className={styles.link}>
-            Already have an account ? &nbsp;<a href="/login">Login</a>
-          </div>
-          <div className={styles.button}>
-            <button
-              type="submit"
-              className={`btn btn-primary ${styles.submitBtn}`}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+            <div className={styles.button}>
+              <button
+                type="submit"
+                className={`btn btn-primary ${styles.submitBtn}`}
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+
       <ToastContainer />
     </div>
   );
