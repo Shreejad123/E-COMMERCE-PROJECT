@@ -1,5 +1,6 @@
 .user_form {
   margin-top: 10px;
+  margin-left: 0px;
 }
 .skeletonImage {
   height: 26.042vw;
@@ -23,8 +24,9 @@
 }
 .register {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  width: 60%;
+  width: 50%;
   padding: 20px;
+  padding-right: 0px;
   margin: 0 auto;
 
   border-radius: 0.5rem;
@@ -34,10 +36,9 @@
 }
 .user_details {
   gap: 0px;
-
+  column-gap: 0px;
   display: grid;
   grid-template-columns: 0.7fr 0.9fr;
-  /* max-width: 1000px; */
 }
 
 .inputs::placeholder {
@@ -62,19 +63,17 @@
   margin-left: 10%;
 }
 .submitBtn {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
+  margin-left: 13%;
+  width: 60%;
   background-color: darkblue;
   border: none;
   font-size: 14px;
 }
 .link {
-  display: flex;
-  justify-content: center;
   margin-bottom: 3%;
   margin-top: 3%;
   font-size: 14px;
+  margin-left: 15%;
 }
 .link a {
   text-decoration: none;
