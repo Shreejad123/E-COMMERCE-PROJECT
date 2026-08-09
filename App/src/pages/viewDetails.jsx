@@ -11,7 +11,7 @@ import ViewProduct from "./viewPage";
 import styles from "./viewDetails.module.css";
 import Cart from "./Cart";
 import { IoCartSharp } from "react-icons/io5";
-import ProductCardSkeleton from "./Skeleton.jsx";
+import ProductCardSkeleton from "./ProductSkeleton.jsx";
 const ViewDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -82,7 +82,10 @@ const ViewDetails = () => {
     <>
       <Navbar></Navbar>
       <div className={styles.containerCard}>
-        <ViewProduct viewitem={product}></ViewProduct>
+        <ViewProduct
+          viewitem={product}
+          className={styles.viewProduct}
+        ></ViewProduct>
         <div className={styles.buttonDiv}>
           <button
             className={`btn btn-primary ${styles.customBtn}`}
