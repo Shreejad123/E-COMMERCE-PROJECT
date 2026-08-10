@@ -106,9 +106,10 @@ Through this project, I gained hands-on experience in:
 
 ### Cart Page
 
-![Cart Page](./App/src/assets/screenshots/cart.png)
-![footer Page](./App/src/assets/screenshots/footer.png)
 ![Home Page](./App/src/assets/screenshots/home.png)
+![footer Page](./App/src/assets/screenshots/footer.png)
+![Cart Page](./App/src/assets/screenshots/cart.png)
+
 ![view Page](./App/src/assets/screenshots/view.png)
 
 ## Live Demo
