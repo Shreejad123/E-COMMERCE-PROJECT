@@ -14,7 +14,7 @@
 .image {
   /* width: 17rem; */
   border-radius: 8px;
-  height: 90%;
+  height: 100%;
 }
 .input {
   flex: 1;
@@ -31,7 +31,8 @@
 
   border-radius: 0.5rem;
 
-  height: 60%;
+  height: 40%;
+  max-height: 500px;
   margin-top: 5%;
 }
 .user_details {
@@ -48,6 +49,7 @@
 .input input {
   width: 80%;
   margin-left: 15%;
+  height: 50%;
 }
 .input label {
   margin-left: 15%;
@@ -80,16 +82,16 @@
 }
 
 .bottomRight {
-  text-align: center;
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 0px;
-  margin-left: 20px;
+  margin-left: 15%;
+  margin-bottom: 5%;
 }
 .imageContainer img {
   width: 100%;
-  height: 80%;
-  margin-top: 20px;
+  height: 90%;
+  margin-top: 40px;
 
   /* min-width: 500px; */
 }
