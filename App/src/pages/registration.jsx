@@ -109,14 +109,14 @@ const Registration = () => {
     e.preventDefault();
 
     const isfullNameValid = validatefullName(fullName);
-    const isLastNameValid = validateLastName(lastName);
+    // const isLastNameValid = validateLastName(lastName);
     const isEmailValid = validateEmail(email);
     // const isvalidateContact = validateContact(contactNumber);
     const arePasswordsValid = validatePasswords(password, confirmPassword);
 
     if (
       isfullNameValid &&
-      isLastNameValid &&
+      // isLastNameValid &&
       // isvalidateContact &&
       isEmailValid &&
       arePasswordsValid
@@ -154,7 +154,6 @@ const Registration = () => {
   return (
     <div>
       <div className={styles.register}>
-        <h4 className={styles.bottomRight}>Create an Account</h4>
         <div className={styles.user_details}>
           {" "}
           <div className={styles.imageContainer}>
@@ -168,6 +167,7 @@ const Registration = () => {
           <form onSubmit={handleSubmit} className={styles.form}>
             {/* <h2 className={styles.header}>Register</h2> */}
             <div className={styles.user_form}>
+              <h4 className={styles.bottomRight}>Create an Account</h4>
               <div className={styles.input}>
                 <label htmlFor="fullNameInput">Full Name</label>
                 <input
