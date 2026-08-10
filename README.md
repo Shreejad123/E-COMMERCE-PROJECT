@@ -101,7 +101,11 @@ Through this project, I gained hands-on experience in:
 * Component reusability
 * Performance optimization
 * User experience improvements
+## Screenshots
 
+### Cart Page
+
+![Cart Page](./screenshots/cart.png)
 ## Live Demo
 
 https://e-commerce-project-ec1o.vercel.app/
