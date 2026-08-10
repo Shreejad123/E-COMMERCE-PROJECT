@@ -103,10 +103,6 @@ Through this project, I gained hands-on experience in:
 * User experience improvements
 ## Screenshots
 
-### Cart Page
-
-
-
 ![Home Page](./App/src/assets/screenshots/home.png)
 ![footer Page](./App/src/assets/screenshots/footer.png)
 ![Cart Page](./App/src/assets/screenshots/cart.png)
