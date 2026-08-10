@@ -106,10 +106,10 @@ Through this project, I gained hands-on experience in:
 ### Cart Page
 
 
-![Cart Page](./src/assets/screenshots/cart.png)
-![footer Page](./src/assets/screenshots/footer.png)
-![home Page](./src/assets/screenshots/home.png)
-![view Page](./src/assets/screenshots/view.png)
+![Cart Page](./App/src/assets/screenshots/cart.png)
+![footer Page](./App/src/assets/screenshots/footer.png)
+![Home Page](./App/src/assets/screenshots/home.png)
+![view Page](./App/src/assets/screenshots/view.png)
 ## Live Demo
 
 https://e-commerce-project-ec1o.vercel.app/
